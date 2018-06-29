@@ -20,8 +20,8 @@
 \contentsline {subsection}{\numberline {7.4}Protected Branches}{5}
 \contentsline {subsection}{\numberline {7.5}README}{5}
 \contentsline {subsection}{\numberline {7.6}License}{5}
-\contentsline {subsection}{\numberline {7.7}Config Repository}{5}
+\contentsline {subsection}{\numberline {7.7}Config Repository}{6}
 \contentsline {section}{\numberline {8}Environments}{6}
 \contentsline {subsection}{\numberline {8.1}dev}{6}
-\contentsline {subsection}{\numberline {8.2}qa}{6}
-\contentsline {subsection}{\numberline {8.3}prd}{6}
+\contentsline {subsection}{\numberline {8.2}qa}{7}
+\contentsline {subsection}{\numberline {8.3}prd}{7}
