@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage{subcaption}
+\usepackage{wrapfig}
 
 
 \titlehead{
@@ -96,6 +97,18 @@
 	This label may also be used by automated tooling to send notifications on un-reviewed pull requests
 	
 	\subsection{Requesting Reviews}
+
+   	
+   	Reviewers may be requested in Github inside of a pull request (Figure \ref{fig:requestreviewer}).
+   	This will notify the user via Github notifications and email, if the user has them enabled.
+   	Github notifications can be easily missed, so it is advised to use direct messing in Slack if the request is urgent.
+   	
+   	\begin{wrapfigure}{R}{0.4\textwidth}
+  		\centering
+    		\includegraphics[width=0.4\textwidth]{images/requestreviewer.png}
+    		\caption{Requesting a reviewer on a pull request.}
+    		\label{fig:requestreviewer}
+   	\end{wrapfigure}
    
 	\section{Review Process}
 	

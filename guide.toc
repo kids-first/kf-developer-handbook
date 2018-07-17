@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {4.2}Pull Request Titles}{5}
 \contentsline {subsection}{\numberline {4.3}Keeping the Commit Log Tidy}{5}
 \contentsline {subsection}{\numberline {4.4}Labeling Pull Requests}{5}
-\contentsline {subsection}{\numberline {4.5}Requesting Reviews}{6}
+\contentsline {subsection}{\numberline {4.5}Requesting Reviews}{5}
 \contentsline {section}{\numberline {5}Review Process}{6}
 \contentsline {subsection}{\numberline {5.1}Code Review}{6}
 \contentsline {subsection}{\numberline {5.2}Testing}{6}
