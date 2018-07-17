@@ -28,7 +28,7 @@
       
 	\section{Finding Issues}
 	
-	\subsection{Labels}
+	\subsection{Labels}\label{labels}
 	
 	Repositories across the D3b Github organization that have frequent user feedback and bug reports should use our standard set of labels to tag issues shown in Figure \ref{fig:labels}.
 	Labels act as a means of filtering categories of issues and providing summaries of effort completed in release notes.
@@ -84,9 +84,16 @@
 	In addition to best practices outlined in Section \ref{commits}, care should be taken to avoid introducing unhelpful commits such as merges of master into a feature branch.
 	Often, a feature branch will become stale during development as other features are merged into master.
 	Instead of using the {\em Update} button in Github to merge the latest master into the feature branch, one should opt to rebase the branch on the latest master.
-	This will avoid adding many {\em Merged branch master} commits into a feature branches commit history.
+	This will avoid adding many {\em Merged branch master} commits into a feature branches 
 	
 	\subsection{Labeling Pull Requests}
+	
+	The labels on pull requests are shared with those in issues (Section \ref{labels}, Figure \ref{fig:labels}).
+	Pull requests should be labeled appropriately so that they may be filtered and analyzed easily.
+	
+	One special label that applies only to pull requests is the {\em ready-for-review} label.
+	Marking an open pull request with this label signals to other developers that it is ready for a code review.
+	This label may also be used by automated tooling to send notifications on un-reviewed pull requests
 	
 	\subsection{Requesting Reviews}
    
