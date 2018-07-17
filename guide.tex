@@ -1,6 +1,8 @@
 \documentclass[a4paper,12pt,titlepage]{scrartcl}
 \usepackage{graphicx}
 \usepackage{url}
+\usepackage{subcaption}
+
 
 \titlehead{
 	\centering
@@ -35,21 +37,54 @@
 	Use it to mark issues that are self-contained and do not require in-depth knowledge of how the code base works.
 	This tag is useful for guiding new members or external contributors looking to get involved to issues that will be easy for them to accomplish.
    
-    \begin{figure}
-    		\centering
-    		\includegraphics[width=0.6\linewidth]{images/labels.png}
-    		\label{fig:labels}
-    		\caption{Standard Repository labels with descriptions and colors}
-    \end{figure}
-	
+  	\begin{figure}[h]
+  			\centering
+    			\includegraphics[width=0.4\textwidth]{images/labels.png}
+    			\caption{Standard Repository labels with descriptions and colors}
+    			\label{fig:labels}
+   	\end{figure}
    
 	\section{Creating a Pull Request}
 	
-	\subsection{Commit Messages}
+	\subsection{Commit Messages}\label{commits}
+	
+	\begin{figure}
+	\centering
+   	\begin{subfigure}[h]{0.4\textwidth}
+    		\centering
+    		\includegraphics[width=\textwidth]{images/prhistory.png}
+    		\caption{Closed pull requests in Github}
+    		\label{fig:prhistory}
+    	\end{subfigure}
+    	 \hfill
+  	\begin{subfigure}[h]{0.4\textwidth}
+    		\centering
+    		\includegraphics[width=\textwidth]{images/commithistory.png}
+    		\caption{A slice of the dataservice commit history in Github.}
+    		\label{fig:commithistory}
+    	\end{subfigure}
+    	\caption{Use of emojis in the dataservice.}
+   	\end{figure}	
+	
+	Commit messages are vital in being able to navigate a code base's history.
+	There are many resources providing best practices for commit messages \cite{beams, socommits}.
+	
+	We require commits to be prefixed with a single emoji that appropriately summarizes the the gist of the commit.
+	This is helpful in allowing one to scan through the commit log visually inside of Github (Figure \ref{fig:commithistory}) or be able to perform summary analysis inside of release notes or when analyzing git activity as a whole.
+	When adding an emoji to the commit message, use the colon-ated version as opposed to the actual unicode symbol, eg: {\em :sparkles:}.
+	For inspiration of what emoji may be most appropriate, see the gitmoji guide \cite{gitmoji}.
 	
 	\subsection{Pull Request Titles}
 	
+	Pull request titles should begin with an emoji, similar to commit messages.
+	This provides similar benefits to commit message emojis where past pull requests may quickly be scanned and summarized (Figure \ref{fig:prhistory}).
+	
 	\subsection{Keeping the Commit Log Tidy}
+	
+	In addition to best practices outlined in Section \ref{commits}, care should be taken to avoid introducing unhelpful commits such as merges of master into a feature branch.
+	Often, a feature branch will become stale during development as other features are merged into master.
+	Instead of using the {\em Update} button in Github to merge the latest master into the feature branch, one should opt to rebase the branch on the latest master.
+	This will avoid adding many {\em Merged branch master} commits into a feature branches commit history.
 	
 	\subsection{Labeling Pull Requests}
 	
@@ -87,8 +122,8 @@
 	\begin{figure}
     		\centering
     		\includegraphics[width=0.8\linewidth]{images/license.png}
-    		\label{fig:addlicense}
     		\caption{The Apache 2.0 license is available by default from the Github web interface.}
+    		\label{fig:addlicense}
     \end{figure}
 	
 	\subsection{Config Repository}
@@ -135,8 +170,8 @@
 	\begin{figure}
     		\centering
     		\includegraphics[width=0.6\linewidth]{images/reposummary.png}
-    		\label{fig:reposummary}
     		\caption{An exemplary repository summary including: proper naming scheme, emoji followed by short description, labels, the {\em Apache 2.0} license, and issues tagged with {\em help wanted}}
+    		\label{fig:reposummary}
     \end{figure}
 
 	\bibliographystyle{plain}
