@@ -102,7 +102,7 @@
    	This will notify the user via Github notifications and email, if the user has them enabled.
    	Github notifications can be easily missed, so it is advised to use direct messing in Slack if the request is urgent.
    	
-   	\begin{wrapfigure}{R}{0.4\textwidth}
+   	\begin{wrapfigure}{r}{0.4\textwidth}
   		\centering
     		\includegraphics[width=0.4\textwidth]{images/requestreviewer.png}
     		\caption{Requesting a reviewer on a pull request.}
@@ -122,7 +122,20 @@
 	Existence and functionality of these tests should be checked as part of the review process.
 	
 	\subsection{Status Checks}
+	
+	Status checks is a feature in Github that listens to services that run in response to git hooks (Figure \ref{fig:statuschecks}).
+	Pull requests will be prevented from merging until each of these services reports back positively on the state of the code.
+	In addition to services, reviews are may also be included as status checks, requiring one or more approvals from reviewers before being marked as ok.
    
+   	\begin{wrapfigure}{r}{0.4\textwidth}
+  		\centering
+    		\includegraphics[width=0.4\textwidth]{images/statuschecks.png}
+    		\caption{Status checks on a pull request.}
+    		\label{fig:statuschecks}
+   	\end{wrapfigure}
+   	
+   	\pagebreak
+   	
 	\section{Software Release}
 	
 	\section{New Repositories}
@@ -144,7 +157,7 @@
 	The Apache 2.0 license may be easily added from the root repository view on Github using {\em add new file} and naming it LICENSE.
 	This will present a {\em Choose license template} button to the right of the file name where the Apache 2.0 License may be chosen to automatically populate the file (See Fig \ref{fig:addlicense}).
 	
-	\begin{figure}
+	\begin{figure}[t]
     		\centering
     		\includegraphics[width=0.8\linewidth]{images/license.png}
     		\caption{The Apache 2.0 license is available by default from the Github web interface.}
