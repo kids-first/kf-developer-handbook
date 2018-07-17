@@ -97,7 +97,6 @@
 	This label may also be used by automated tooling to send notifications on un-reviewed pull requests
 	
 	\subsection{Requesting Reviews}
-
    	
    	Reviewers may be requested in Github inside of a pull request (Figure \ref{fig:requestreviewer}).
    	This will notify the user via Github notifications and email, if the user has them enabled.
@@ -115,6 +114,12 @@
 	\subsection{Code Review}
 	
 	\subsection{Testing}
+	
+	Commit hooks should trigger testing integrations upon any push to master or a branch with an open pull request, at the least.
+	Among these integrations should be at least on test runner that will run the repositories unit tests and report status back to Github.
+	Having tests is critical to ensuring that new features are hardened for future development.
+	Tests for new features in a pull request are expected to have tests included at the time of review.
+	Existence and functionality of these tests should be checked as part of the review process.
 	
 	\subsection{Status Checks}
    
