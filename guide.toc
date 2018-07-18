@@ -2,7 +2,7 @@
 \contentsline {section}{\numberline {2}Creating Issues}{3}
 \contentsline {section}{\numberline {3}Finding Issues}{3}
 \contentsline {subsection}{\numberline {3.1}Labels}{3}
-\contentsline {section}{\numberline {4}Creating a Pull Request}{4}
+\contentsline {section}{\numberline {4}Creating a Pull Request}{3}
 \contentsline {subsection}{\numberline {4.1}Commit Messages}{4}
 \contentsline {subsection}{\numberline {4.2}Pull Request Titles}{4}
 \contentsline {subsection}{\numberline {4.3}Keeping the Commit Log Tidy}{4}
