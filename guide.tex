@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage{subcaption}
+\usepackage{wrapfig}
 
 
 \titlehead{
@@ -28,7 +29,7 @@
       
 	\section{Finding Issues}
 	
-	\subsection{Labels}
+	\subsection{Labels}\label{labels}
 	
 	Repositories across the D3b Github organization that have frequent user feedback and bug reports should use our standard set of labels to tag issues shown in Figure \ref{fig:labels}.
 	Labels act as a means of filtering categories of issues and providing summaries of effort completed in release notes.
@@ -45,6 +46,10 @@
    	\end{figure}
    
 	\section{Creating a Pull Request}
+	
+	Creating a pull request is the first step to getting new code merged back into the code base.
+	Opening of a new pull request may signify that changes are ready for review, or that the author wishes to give visibility into their current status.
+	This section outlines the common standards and practices around the pull request and review process.
 	
 	\subsection{Commit Messages}\label{commits}
 	
@@ -84,11 +89,29 @@
 	In addition to best practices outlined in Section \ref{commits}, care should be taken to avoid introducing unhelpful commits such as merges of master into a feature branch.
 	Often, a feature branch will become stale during development as other features are merged into master.
 	Instead of using the {\em Update} button in Github to merge the latest master into the feature branch, one should opt to rebase the branch on the latest master.
-	This will avoid adding many {\em Merged branch master} commits into a feature branches commit history.
+	This will avoid adding many {\em Merged branch master} commits into a feature branches 
 	
 	\subsection{Labeling Pull Requests}
 	
+	The labels on pull requests are shared with those in issues (Section \ref{labels}, Figure \ref{fig:labels}).
+	Pull requests should be labeled appropriately so that they may be filtered and analyzed easily.
+	
+	One special label that applies only to pull requests is the {\em ready-for-review} label.
+	Marking an open pull request with this label signals to other developers that it is ready for a code review.
+	This label may also be used by automated tooling to send notifications on un-reviewed pull requests
+	
 	\subsection{Requesting Reviews}
+   	
+   	Reviewers may be requested in Github inside of a pull request (Figure \ref{fig:requestreviewer}).
+   	This will notify the user via Github notifications and email, if the user has them enabled.
+   	Github notifications can be easily missed, so it is advised to use direct messing in Slack if the request is urgent.
+   	
+   	\begin{wrapfigure}{r}{0.3\textwidth}
+  		\centering
+    		\includegraphics[width=0.4\textwidth]{images/requestreviewer.png}
+    		\caption{Requesting a reviewer on a pull request.}
+    		\label{fig:requestreviewer}
+   	\end{wrapfigure}
    
 	\section{Review Process}
 	
@@ -96,8 +119,27 @@
 	
 	\subsection{Testing}
 	
+	Commit hooks should trigger testing integrations upon any push to master or a branch with an open pull request, at the least.
+	Among these integrations should be at least on test runner that will run the repositories unit tests and report status back to Github.
+	Having tests is critical to ensuring that new features are hardened for future development.
+	Tests for new features in a pull request are expected to have tests included at the time of review.
+	Existence and functionality of these tests should be checked as part of the review process.
+	
 	\subsection{Status Checks}
+	
+	Status checks is a feature in Github that listens to services that run in response to git hooks (Figure \ref{fig:statuschecks}).
+	Pull requests will be prevented from merging until each of these services reports back positively on the state of the code.
+	In addition to services, reviews are may also be included as status checks, requiring one or more approvals from reviewers before being marked as ok.
    
+   	\begin{wrapfigure}{r}{0.4\textwidth}
+  		\centering
+    		\includegraphics[width=0.4\textwidth]{images/statuschecks.png}
+    		\caption{Status checks on a pull request.}
+    		\label{fig:statuschecks}
+   	\end{wrapfigure}
+   	
+   	\pagebreak
+   	
 	\section{Software Release}
 	
 	\section{New Repositories}
@@ -119,7 +161,7 @@
 	The Apache 2.0 license may be easily added from the root repository view on Github using {\em add new file} and naming it LICENSE.
 	This will present a {\em Choose license template} button to the right of the file name where the Apache 2.0 License may be chosen to automatically populate the file (See Fig \ref{fig:addlicense}).
 	
-	\begin{figure}
+	\begin{figure}[t]
     		\centering
     		\includegraphics[width=0.8\linewidth]{images/license.png}
     		\caption{The Apache 2.0 license is available by default from the Github web interface.}
