@@ -35,11 +35,13 @@
 	If an issue seemingly spans many repositories, it likely needs to be broken down into more precise tasks.
 	
 	Issue labels (See section \ref{labels}) should be chosen as needed to easily sort through the backlog.
-	Assigners should be appointed to an issue once they have volunteered to address the issue, or, at the latest, have begun work on it.
+	Assignees should be appointed to an issue once they have volunteered to address the issue, or, at the latest, have begun work on it.
 	There currently is no standard across D3b for formatting an issue body and should be implemented on a repository level.
 	If a repository has an {\em Issue Template}, make sure to follow it!
       
 	\subsection{Finding Issues}
+	
+	
 	
 	\subsection{Labels}\label{labels}
 	
@@ -57,7 +59,7 @@
     			\label{fig:labels}
    	\end{figure}
    
-	\section{Creating a Pull Request}
+	\section{Creating a Pull Request}\label{prprocess}
 	
 	Creating a pull request is the first step to getting new code merged back into the code base.
 	Opening of a new pull request may signify that changes are ready for review, or that the author wishes to give visibility into their current status.
@@ -143,7 +145,7 @@
 	Pull requests will be prevented from merging until each of these services reports back positively on the state of the code.
 	In addition to services, reviews are may also be included as status checks, requiring one or more approvals from reviewers before being marked as ok.
    
-   	\begin{wrapfigure}{r}{0.4\textwidth}
+   	\begin{wrapfigure}{R}{0.4\textwidth}
   		\centering
     		\includegraphics[width=0.4\textwidth]{images/statuschecks.png}
     		\caption{Status checks on a pull request.}
@@ -152,7 +154,42 @@
    	
    	\pagebreak
    	
-	\section{Software Release}
+	\section{Continuous Deployment Process}
+	
+	Service deployments are automatically triggered by new commits to a repository.
+	
+	All commits branches that are not {\em master} build and deploy to the {\em dev} environment (Section \ref{dev}).
+	
+	Any commit to {\em master} will trigger a deployment to {\em qa} (Section \ref{qa}).
+	As a result, once the review process is complete (Section \ref{prprocess}) and the feature branch is merged into {\em master}, a deployment to {\em qa} will occur.
+	
+	
+	\begin{figure}[t]
+  			\centering
+    			\includegraphics[width=0.6\textwidth]{images/gitflow-Page-1.png}
+    			\caption{Deployment steps during development of a new feature.}
+    			\label{fig:devflow}
+   	\end{figure}
+   	
+   	A deployment to production, or a release, occurs when the master branch is tagged with a semantic version (Figure \ref{fig:releaseflow}).
+   	There are a couple other steps that should happen before the tag is added, however.
+   	The process is outlined here:
+   	
+   	First, a feature branch titled {\em release-x.y.z} is created.
+   	A commit bumping all version strings and an updated {\em CHANGELOG} is created with a message {\em :label: Release x.y.z}.
+   	A pull request for this release branch is created similar to the process in Section \ref{prprocess}.
+   	During this review, it is important to obtain signoffs from anyone who may be impacted by the new release.
+   	This ensures there is a shared awareness that a new version of the software is about to be released.
+   	After these signoffs have been acquired, the release branch is merged and a release is created on Github.
+   	This will trigger a production deployment and will require one last signoff by an administrator before it is deployed.
+   	Once the administrator has allowed the deployment to proceed, the new release should be available in the production environment.
+   	
+   	\begin{figure}[t]
+  			\centering
+    			\includegraphics[width=0.6\textwidth]{images/gitflow-Page-2.png}
+    			\caption{Deployment steps during releases.}
+    			\label{fig:releaseflow}
+   	\end{figure}
 	
 	\section{New Repositories}
 	
@@ -200,21 +237,21 @@
 	
 	We divide our environments into three primary stages that are tightly couple to our Continuous Integration
 	
-	\subsection{dev}
+	\subsection{dev} \label{dev}
 	
 	The development environment (dev) is intended as sandbox for  new features and code bases.
 	It is the most unstable environment with no guarantees on data availability.
 	When new code is pushed to a feature branch, it automatically triggers its CI pipeline to test, build, and, deploy to the development environment.
 	The branch must pass through testing and deployment successfully to before it is allowed to be merged to insure that it will successfully deploy to the next stage.
 	
-	\subsection{qa}
+	\subsection{qa}\label{qa}
 	
 	The QA environment provides a mostly-stable environment where new features may be used, evaluated, and tested before being released.
 	This is is where integration test-suites may be run to ensure that all services cooperate nicely.
 	The data in QA should also be close to production quality to fully flex all features.
 	New features enter QA after merging a feature branch into the master branch of a code base.
 	
-	\subsection{prd}
+	\subsection{prd}\label{prd}
 	
 	The production environment (prd) is the end-user environment.
 	This is critically stable as it must be exposed to the public.

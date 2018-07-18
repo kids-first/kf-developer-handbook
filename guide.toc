@@ -13,16 +13,16 @@
 \contentsline {subsection}{\numberline {4.1}Code Review}{5}
 \contentsline {subsection}{\numberline {4.2}Testing}{5}
 \contentsline {subsection}{\numberline {4.3}Status Checks}{6}
-\contentsline {section}{\numberline {5}Software Release}{7}
-\contentsline {section}{\numberline {6}New Repositories}{7}
-\contentsline {subsection}{\numberline {6.1}Naming}{7}
-\contentsline {subsection}{\numberline {6.2}Description}{7}
-\contentsline {subsection}{\numberline {6.3}Tags}{7}
-\contentsline {subsection}{\numberline {6.4}Protected Branches}{7}
-\contentsline {subsection}{\numberline {6.5}README}{7}
-\contentsline {subsection}{\numberline {6.6}License}{7}
-\contentsline {subsection}{\numberline {6.7}Config Repository}{7}
-\contentsline {section}{\numberline {7}Environments}{8}
-\contentsline {subsection}{\numberline {7.1}dev}{8}
-\contentsline {subsection}{\numberline {7.2}qa}{8}
-\contentsline {subsection}{\numberline {7.3}prd}{8}
+\contentsline {section}{\numberline {5}Continuous Deployment Process}{7}
+\contentsline {section}{\numberline {6}New Repositories}{8}
+\contentsline {subsection}{\numberline {6.1}Naming}{8}
+\contentsline {subsection}{\numberline {6.2}Description}{8}
+\contentsline {subsection}{\numberline {6.3}Tags}{8}
+\contentsline {subsection}{\numberline {6.4}Protected Branches}{8}
+\contentsline {subsection}{\numberline {6.5}README}{8}
+\contentsline {subsection}{\numberline {6.6}License}{8}
+\contentsline {subsection}{\numberline {6.7}Config Repository}{8}
+\contentsline {section}{\numberline {7}Environments}{9}
+\contentsline {subsection}{\numberline {7.1}dev}{9}
+\contentsline {subsection}{\numberline {7.2}qa}{9}
+\contentsline {subsection}{\numberline {7.3}prd}{9}
