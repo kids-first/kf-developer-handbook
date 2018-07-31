@@ -21,6 +21,27 @@
 	\newpage
    
 	\section{Welcome}
+	
+	\section{Code Standards}
+	
+	\subsection{Languages and Libraries}
+	
+	New projects and code bases should opt to use languages already in use by other projects in the center so as to minimize barriers in on-boarding to the project and allow for better code re-use.
+	In the current case, this means that most data intensive code should focus on Python whenever possible and front-end applications on Javascript and React. 
+	
+	\subsection{Formatting}
+	
+	Python code should follow the pep8 standard\cite{pep8} and use Sphinx styled reST\cite{sphinx} for docstrings.
+	Javascript should follow Airbnb's style guidelines\cite{airbnbjs}.
+   	
+   	\subsection{Documentation}
+   	
+   	The format and quantity of documentation necessary is dependent on the purpose and use case of the project.
+   	At the very least, the README in the repository should offer a basic overview and elementary steps to get started with development on the repository.
+   	See the Section \ref{readme}  for more.
+   	
+   	For other forms of documentation, Sphinx\cite{sphinxdocs}, Swagger\cite{swagger}, or Slate\cite{slate} are good tools to consider.
+   	
    
  	\section{Issues}
  	
@@ -201,7 +222,7 @@
 	
 	\subsection{Protected Branches}
 	
-	\subsection{README}
+	\subsection{README} \label{readme}
 	
 	\subsection{License}
 	
