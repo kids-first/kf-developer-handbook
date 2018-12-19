@@ -11,4 +11,5 @@ Welcome
    :caption: Contents:
 
    repositories
+   software_releases
    cicd
