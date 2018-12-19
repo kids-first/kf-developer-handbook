@@ -10,5 +10,5 @@ Welcome
    :maxdepth: 2
    :caption: Contents:
 
-   github
+   repositories
    cicd
