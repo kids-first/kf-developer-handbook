@@ -10,14 +10,5 @@ Welcome
    :maxdepth: 2
    :caption: Contents:
 
-   github
+   repositories
    cicd
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Anatomy of a Repository &mdash; Kids First Developer Handbook  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Continuous Deployment" href="cicd.html" />
+    <link rel="prev" title="Welcome" href="index.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Kids First Developer Handbook
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The Anatomy of a Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#header-preamble">Header Preamble</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#name">Name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#link">Link</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wikis-and-projects">Wikis and Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tags">Tags</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#required-files">Required Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gitignore">.gitignore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dockerfile">Dockerfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#license">LICENSE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jenkinsfile">Jenkinsfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#readme-md">README.md</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#readme">README</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#branding">Branding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#badges">Badges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#title">Title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#content">Content</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cicd.html">Continuous Deployment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Kids First Developer Handbook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>The Anatomy of a Repository</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/repositories.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-anatomy-of-a-repository">
+<h1>The Anatomy of a Repository<a class="headerlink" href="#the-anatomy-of-a-repository" title="Permalink to this headline">¶</a></h1>
+<p>Keeping code repositories consistent is important to allow developers and interested users to navigate and contribute to the Kids First codebase.
+Here, we lay out the fundamental components that each repository under the <a class="reference external" href="http://github.com/kids-first/">Kids First Organization</a> should include.</p>
+<div class="section" id="header-preamble">
+<h2>Header Preamble<a class="headerlink" href="#header-preamble" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id1">
+<img alt="Dataservice's Repository Header Information" src="_images/dataservice-repo-header.png" />
+<p class="caption"><span class="caption-text">The header components of the <a class="reference external" href="http://github.com/kids-first/kf-api-dataservice">Kids First Dataservice</a></span></p>
+</div>
+<div class="section" id="name">
+<h3>Name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h3>
+<p>All repositories are namespaced with the organization prefx, <em>kf</em>.
+Most also include sub-spaces, such as: <em>api</em>, <em>task</em>, and <em>ui</em>.</p>
+</div>
+<div class="section" id="description">
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+<p>The repository description should contain an emoji to characterize the repository along with a brief description of what the codebase is.</p>
+</div>
+<div class="section" id="link">
+<h3>Link<a class="headerlink" href="#link" title="Permalink to this headline">¶</a></h3>
+<p>The repository link should ideally link to the production application where the code is running.
+If that does not make sense for the codebase, a public facing documentation or endpoint is also a good choice.</p>
+</div>
+<div class="section" id="wikis-and-projects">
+<h3>Wikis and Projects<a class="headerlink" href="#wikis-and-projects" title="Permalink to this headline">¶</a></h3>
+<p>As shown by the navigation tabs, repositories that do not use <em>Projects</em> and <em>Wikis</em> features on GitHub disable them in the repository settings.</p>
+</div>
+<div class="section" id="tags">
+<h3>Tags<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h3>
+<p>Tags should be attached to describe the codebase and make it easier to discover when searching by, eg: <em>python</em>.</p>
+</div>
+</div>
+<div class="section" id="required-files">
+<h2>Required Files<a class="headerlink" href="#required-files" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id2">
+<img alt="Release Coordinator's File Structure" src="_images/coordinator-repo-files.png" />
+<p class="caption"><span class="caption-text">The file structure of the root of the Release Coordinator’s codebase</span></p>
+</div>
+<div class="section" id="gitignore">
+<h3>.gitignore<a class="headerlink" href="#gitignore" title="Permalink to this headline">¶</a></h3>
+<p>An appropriate <cite>.gitignore</cite> is important to prevent against commiting of files that do not need to be tracked.
+This file’s contents will be determined by the codebase.</p>
+</div>
+<div class="section" id="dockerfile">
+<h3>Dockerfile<a class="headerlink" href="#dockerfile" title="Permalink to this headline">¶</a></h3>
+<p>All codebases that are to be deployed should contain a <cite>Dockerfile</cite> that will run the service in a container.</p>
+</div>
+<div class="section" id="license">
+<h3>LICENSE<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h3>
+<p>A copy of the Apache 2.0 license should be included under the <cite>LICENSE</cite> file in the root of all public repositories.
+This file can automatically be added with the GitHub interface by clicking <cite>Create new file</cite>, then entering <cite>LICENSE</cite> as the file name.
+A button prompting to choose the type of license will be displayed which will offer Apache 2.0 as one of the options.</p>
+</div>
+<div class="section" id="jenkinsfile">
+<h3>Jenkinsfile<a class="headerlink" href="#jenkinsfile" title="Permalink to this headline">¶</a></h3>
+<p>Repositories that are built and/or deployed should contain a <cite>Jenkinsfile</cite> that will include the module name of the Jenkins pipeline to use.</p>
+</div>
+<div class="section" id="readme-md">
+<h3>README.md<a class="headerlink" href="#readme-md" title="Permalink to this headline">¶</a></h3>
+<p>The <cite>README.md</cite> file is important for providing more detailed information about the codebase.</p>
+</div>
+</div>
+<div class="section" id="readme">
+<h2>README<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id3">
+<img alt="Dataservice's README" src="_images/dataservice-repo-readme.png" />
+<p class="caption"><span class="caption-text">The header of the Dataservice’s README file as seen on its GitHub repository</span></p>
+</div>
+<p>The README is important for introducing users and developers alike to a codebase.</p>
+<div class="section" id="branding">
+<h3>Branding<a class="headerlink" href="#branding" title="Permalink to this headline">¶</a></h3>
+<p>Public repositories should maintain a consistent Kids First logo with the title of the repository’s application in the head of the README file.</p>
+</div>
+<div class="section" id="badges">
+<h3>Badges<a class="headerlink" href="#badges" title="Permalink to this headline">¶</a></h3>
+<p>Status badges for any status checks that provide them should be listed directly under the repository’s branding image.</p>
+</div>
+<div class="section" id="title">
+<h3>Title<a class="headerlink" href="#title" title="Permalink to this headline">¶</a></h3>
+<p>The title should be included as a heading directly after the badges and be followed by a brief description of the codebase.</p>
+</div>
+<div class="section" id="content">
+<h3>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h3>
+<p>The rest of the README should provide some basic documentation that is unique to the codebase itself.
+This should, at a minimum, explain how to use and develop the code.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cicd.html" class="btn btn-neutral float-right" title="Continuous Deployment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Kids First
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
