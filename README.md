@@ -19,12 +19,9 @@ The docs will be available on localhost:8000 by default.
 
 ## Contributing a change
 
-Make the changes and additions inside the `source/` directory.
-Commit these files, then build a new site and make a new commit with the files
-in the `docs/` directory.
-```
-sphinx-build source docs
-git add docs
-git commit -m ":recycle: Update site"
-```
+Make changes and additions to the documention source files in the `docs/`
+directory, then commit these files.
 Push and make a pull request for review as would normally be done.
+When the branch has been merged, the CircleCI will automatically build and
+push the site to the `gh-pages` branch which will be deployed on github
+pages at https://kids-first.github.io/kf-developer-handbook.
