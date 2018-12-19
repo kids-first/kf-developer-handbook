@@ -96,7 +96,7 @@ Public repositories should maintain a consistent Kids First logo with the title 
 Badges
 ------
 
-Status badges for any status checks that provide them should be listed directly under the repository's branding image.
+Status badges for any `Status Checks`_ that provide them should be listed directly under the repository's branding image.
 
 Title
 -----
@@ -108,3 +108,40 @@ Content
 
 The rest of the README should provide some basic documentation that is unique to the codebase itself.
 This should, at a minimum, explain how to use and develop the code.
+
+Status Checks
+=============
+
+Status Checks are automated checks that test various aspects of the code to help ensure quality.
+Having relevant checks is a low-cost method of improving reliability of a code base.
+
+.. figure:: _static/images/dataservice-status-checks.png
+   :alt: Screenshot of a pull request's status checks inside a pull request
+
+   Status checks as reported within a pull request against the Dataservice
+
+Pull Request Reviews
+--------------------
+
+At least one review should be required from another developer for a pull request.
+This setting can be configured under branch protection settings in a repository.
+
+CircleCI
+--------
+
+CircleCI can be used to run automated testing such as linting checks for style and unit tests for functionality.
+It is a good idea to reqiure CircleCI for at least one of these checks.
+
+Jenkins
+-------
+
+The Jenkins check will report on the deployment status of the branch.
+If it fails, it may indicate that there is a problem with the integration pipeline which may mean that a later deployment could fail if not resolved.
+
+Netlify
+-------
+
+If a codebase is being deployed with netlify, a number of checks indicating the health of the deployment can be enabled.
+Netlifiy can also be configured to post review comments with links to the deployed branches.
+
+

@@ -104,6 +104,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#content">Content</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#status-checks">Status Checks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pull-request-reviews">Pull Request Reviews</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#circleci">CircleCI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jenkins">Jenkins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#netlify">Netlify</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="software_releases.html">Software Releases</a></li>
@@ -248,7 +255,7 @@ A button prompting to choose the type of license will be displayed which will of
 </div>
 <div class="section" id="badges">
 <h3>Badges<a class="headerlink" href="#badges" title="Permalink to this headline">¶</a></h3>
-<p>Status badges for any status checks that provide them should be listed directly under the repository’s branding image.</p>
+<p>Status badges for any <a class="reference internal" href="#status-checks">Status Checks</a> that provide them should be listed directly under the repository’s branding image.</p>
 </div>
 <div class="section" id="title">
 <h3>Title<a class="headerlink" href="#title" title="Permalink to this headline">¶</a></h3>
@@ -258,6 +265,35 @@ A button prompting to choose the type of license will be displayed which will of
 <h3>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h3>
 <p>The rest of the README should provide some basic documentation that is unique to the codebase itself.
 This should, at a minimum, explain how to use and develop the code.</p>
+</div>
+</div>
+<div class="section" id="status-checks">
+<h2>Status Checks<a class="headerlink" href="#status-checks" title="Permalink to this headline">¶</a></h2>
+<p>Status Checks are automated checks that test various aspects of the code to help ensure quality.
+Having relevant checks is a low-cost method of improving reliability of a code base.</p>
+<div class="figure" id="id4">
+<img alt="Screenshot of a pull request's status checks inside a pull request" src="_images/dataservice-status-checks.png" />
+<p class="caption"><span class="caption-text">Status checks as reported within a pull request against the Dataservice</span></p>
+</div>
+<div class="section" id="pull-request-reviews">
+<h3>Pull Request Reviews<a class="headerlink" href="#pull-request-reviews" title="Permalink to this headline">¶</a></h3>
+<p>At least one review should be required from another developer for a pull request.
+This setting can be configured under branch protection settings in a repository.</p>
+</div>
+<div class="section" id="circleci">
+<h3>CircleCI<a class="headerlink" href="#circleci" title="Permalink to this headline">¶</a></h3>
+<p>CircleCI can be used to run automated testing such as linting checks for style and unit tests for functionality.
+It is a good idea to reqiure CircleCI for at least one of these checks.</p>
+</div>
+<div class="section" id="jenkins">
+<h3>Jenkins<a class="headerlink" href="#jenkins" title="Permalink to this headline">¶</a></h3>
+<p>The Jenkins check will report on the deployment status of the branch.
+If it fails, it may indicate that there is a problem with the integration pipeline which may mean that a later deployment could fail if not resolved.</p>
+</div>
+<div class="section" id="netlify">
+<h3>Netlify<a class="headerlink" href="#netlify" title="Permalink to this headline">¶</a></h3>
+<p>If a codebase is being deployed with netlify, a number of checks indicating the health of the deployment can be enabled.
+Netlifiy can also be configured to post review comments with links to the deployed branches.</p>
 </div>
 </div>
 </div>
