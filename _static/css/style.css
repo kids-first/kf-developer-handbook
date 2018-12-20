@@ -1,10 +1,16 @@
 .wy-side-nav-search {
-    background-color: #e53a95;
+    background: #f4f5f8;
+    color: #343434;
+    border-bottom: #a6278f solid 8px;
+}
+
+.wy-side-nav-search > a {
+    margin-bottom: 1px;
 }
 
 .wy-nav-side {
     color: #f4f5f8;
-    background-color: #343434;
+    background: #343434;
 }
 
 .wy-menu-vertical a {
@@ -12,9 +18,12 @@
 }
 
 .wy-menu-vertical a:active {
-    background-color: #e53a95;
+    background: #e53a95;
 }
 
+.wy-side-nav-search input[type="text"] {
+    border-color: #009bba;
+}
 .wy-nav-content {
 }
 
