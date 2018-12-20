@@ -1,0 +1,22 @@
+.wy-side-nav-search {
+    background-color: #e53a95;
+}
+
+.wy-nav-side {
+    color: #f4f5f8;
+    background-color: #343434;
+}
+
+.wy-menu-vertical a {
+    color: #f4f5f8;
+}
+
+.wy-menu-vertical a:active {
+    background-color: #e53a95;
+}
+
+.wy-nav-content {
+}
+
+.wy-body-for-nav {
+}
