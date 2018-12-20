@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/_static/images/logo.png" alt="Kids First Developer Handbook Logo" height="250">
+</p>
+
 # Kids First Developer Handbook
 
 ## Adding to the handbook
