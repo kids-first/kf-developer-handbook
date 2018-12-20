@@ -10,6 +10,7 @@
    :maxdepth: 2
    :caption: Contents:
 
+   feature_lifecycle
    repositories
    software_releases
    cicd
