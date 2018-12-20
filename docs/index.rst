@@ -14,3 +14,11 @@
    repositories
    software_releases
    cicd
+
+Guides
+======
+
+.. toctree::
+   :maxdepth: 2
+
+   guides/index
