@@ -14,6 +14,13 @@ Any Kids First codebase should provide some information to get started within th
 Assuming that the repository follows the standard practices as outlined in :ref:`The Anatomy of a Repository` , the README should clearly define any requirements and where to get them, how to run the application in a local development environment, and how to run tests to ensure functionality.
 If the application is complex and requires other services like databases or other Kids First applications, a `docker-compose.yml` file should be available that will configure these services locally for development and testing.
 
+Branching
+=========
+
+A new branch is created from `master` to start accepting new commits.
+
+Read more in the :ref:`Branches` Guide
+
 Commiting Changes
 =================
 
