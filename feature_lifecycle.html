@@ -1,0 +1,288 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Feature Lifecycle &mdash; Kids First Developer Handbook  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/style.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The Anatomy of a Repository" href="repositories.html" />
+    <link rel="prev" title="Guides" href="index.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The Feature Lifecycle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#development">Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#branching">Branching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commiting-changes">Commiting Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-pull-request">Creating a Pull Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#status-checks">Status Checks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pull-request-reviews">Pull Request Reviews</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-merge">The Merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#qa-deployment">QA Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release">Release</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repositories.html">The Anatomy of a Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software_releases.html">Software Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cicd.html">Continuous Deployment</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guides/index.html">Guides</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Kids First Developer Handbook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>The Feature Lifecycle</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/feature_lifecycle.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-feature-lifecycle">
+<h1>The Feature Lifecycle<a class="headerlink" href="#the-feature-lifecycle" title="Permalink to this headline">¶</a></h1>
+<p>Contributing code is an obvious necessity in progressing any software project.
+However, there is and endless amount of ways to do so.
+By standardizing the process and documenting it thorougly, we hope to make contributing code to any Kids First repository a consistent and straightforward experience.
+Following is the sequentially organized steps to contribute code to any Kids First codebase.</p>
+<div class="section" id="development">
+<h2>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h2>
+<p>Any Kids First codebase should provide some information to get started within the README of the GitHub repository.
+Assuming that the repository follows the standard practices as outlined in <a class="reference internal" href="repositories.html#the-anatomy-of-a-repository"><span class="std std-ref">The Anatomy of a Repository</span></a> , the README should clearly define any requirements and where to get them, how to run the application in a local development environment, and how to run tests to ensure functionality.
+If the application is complex and requires other services like databases or other Kids First applications, a <cite>docker-compose.yml</cite> file should be available that will configure these services locally for development and testing.</p>
+</div>
+<div class="section" id="branching">
+<h2>Branching<a class="headerlink" href="#branching" title="Permalink to this headline">¶</a></h2>
+<p>A new branch is created from <cite>master</cite> to start accepting new commits.</p>
+<p>Read more in the <a class="reference internal" href="guides/branches.html#branches"><span class="std std-ref">Branches</span></a> Guide</p>
+</div>
+<div class="section" id="commiting-changes">
+<h2>Commiting Changes<a class="headerlink" href="#commiting-changes" title="Permalink to this headline">¶</a></h2>
+<p>Code changes are added through commits to a new feature branch forked from <cite>master</cite>.</p>
+<p>Read more in <a class="reference internal" href="guides/commit_messages.html#commit-messages"><span class="std std-ref">Commit Messages</span></a> Guide</p>
+</div>
+<div class="section" id="creating-a-pull-request">
+<h2>Creating a Pull Request<a class="headerlink" href="#creating-a-pull-request" title="Permalink to this headline">¶</a></h2>
+<p>Creating a pull request is the first step to getting new code merged back into the code base.
+Opening of a new pull request may signify that changes are ready for review, or that the author wishes to give visibility into their current status.</p>
+</div>
+<div class="section" id="status-checks">
+<h2>Status Checks<a class="headerlink" href="#status-checks" title="Permalink to this headline">¶</a></h2>
+<p>Status checks will be initiated automatically upon commiting to a branch.
+Some status checks will be required, while others may not be, depending on the decisions made by the mantainers of the repository.
+See <a class="reference internal" href="repositories.html#status-checks"><span class="std std-ref">Status Checks</span></a> for some of the different checks in use.
+A pull request may only be merged if it has passed the required status checks.</p>
+</div>
+<div class="section" id="pull-request-reviews">
+<h2>Pull Request Reviews<a class="headerlink" href="#pull-request-reviews" title="Permalink to this headline">¶</a></h2>
+<p>Reviews will be performed by at least on developer for a pull request.
+The feature developer will work with the reviewer(s) until the changes are satisfactory and meet standards.
+Once the pull request has recieved the necessary positive reviews and has successful status checks, the branch is ready to merge.</p>
+</div>
+<div class="section" id="the-merge">
+<h2>The Merge<a class="headerlink" href="#the-merge" title="Permalink to this headline">¶</a></h2>
+<p>Once pull request checks have passed, a feature is ready to be merged into <cite>master</cite>.
+The branch owner should first check that a branch is up to date with <cite>master</cite> and perform a rebase if necessary.
+Merging <cite>master</cite> back into the feature branch via the GitHub UI <strong>should not be done</strong> so as to avoid pontentially many merge commits in the repository’s history.
+When a branch has been updated, it is the responsibility of the branch owner to merge the branch into <cite>master</cite>.</p>
+</div>
+<div class="section" id="qa-deployment">
+<h2>QA Deployment<a class="headerlink" href="#qa-deployment" title="Permalink to this headline">¶</a></h2>
+<p>At this stage, the new feature will be in the <cite>master</cite> branch of the codebase and should have been deployed into the QA enviornment, making it available internally.
+This provides time to discover any extraneous bugs or integration issues before it is released.</p>
+</div>
+<div class="section" id="release">
+<h2>Release<a class="headerlink" href="#release" title="Permalink to this headline">¶</a></h2>
+<p>A release is tagged directly on the <cite>master</cite> branch of the repository.
+This will trigger a deployment of the codebase at that commit to production and the general public.</p>
+<p>Read more about <a class="reference internal" href="software_releases.html#software-releases"><span class="std std-ref">Software Releases</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="repositories.html" class="btn btn-neutral float-right" title="The Anatomy of a Repository" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Guides" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Kids First
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
