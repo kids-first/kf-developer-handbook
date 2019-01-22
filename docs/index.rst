@@ -15,19 +15,25 @@ Developer Handbook
 
 
 .. toctree::
+   :glob:
    :maxdepth: 1
    :caption: Development
 
-   development/index
+   development/feature_lifecycle
+   development/repositories
+   development/software_releases
+   development/cicd
 
 .. toctree::
+   :glob:
    :maxdepth: 1
    :caption: Architecture
 
-   architecture/index
+   architecture/*
 
 .. toctree::
    :maxdepth: 1
+   :glob:
    :caption: Guides
 
-   guides/index
+   guides/*
