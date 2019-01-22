@@ -22,6 +22,12 @@ Developer Handbook
 
 .. toctree::
    :maxdepth: 1
+   :caption: Architecture
+
+   architecture/index
+
+.. toctree::
+   :maxdepth: 1
    :caption: Guides
 
    guides/index
