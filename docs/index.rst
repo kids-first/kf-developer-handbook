@@ -3,6 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+Developer Handbook
+==================
+
 .. image:: _static/images/logo.png
    :alt: Kids First Developer Handbook
 
@@ -10,15 +13,15 @@
    :maxdepth: 2
    :caption: Contents:
 
-   feature_lifecycle
-   repositories
-   software_releases
-   cicd
-
-Guides
-======
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+   :caption: Development
+
+   development/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Guides
 
    guides/index
