@@ -34,6 +34,8 @@ Creating a Pull Request
 Creating a pull request is the first step to getting new code merged back into the code base.
 Opening of a new pull request may signify that changes are ready for review, or that the author wishes to give visibility into their current status.
 
+Read more in the :ref:`Pull Requests` Guide
+
 Status Checks
 =============
 
@@ -48,6 +50,8 @@ Pull Request Reviews
 Reviews will be performed by at least on developer for a pull request.
 The feature developer will work with the reviewer(s) until the changes are satisfactory and meet standards.
 Once the pull request has recieved the necessary positive reviews and has successful status checks, the branch is ready to merge.
+
+Read more in the :ref:`Pull Requests` Guide
 
 The Merge
 =========
