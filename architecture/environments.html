@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Commit Messages &mdash; Kids First Developer Handbook  documentation</title>
+  <title>Environments &mdash; Kids First Developer Handbook  documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pull Requests" href="pull_requests.html" />
-    <link rel="prev" title="Branches" href="branches.html" /> 
+    <link rel="next" title="Branches" href="../guides/branches.html" />
+    <link rel="prev" title="Continuous Deployment" href="../development/cicd.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -90,14 +90,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../development/cicd.html">Continuous Deployment</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Architecture</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../architecture/environments.html">Environments</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Environments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#local">Local</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#development-dev">Development - dev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quality-assurance-qa">Quality Assurance - qa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#production-prd">Production - prd</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="branches.html">Branches</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Commit Messages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pull_requests.html">Pull Requests</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/branches.html">Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/commit_messages.html">Commit Messages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/pull_requests.html">Pull Requests</a></li>
 </ul>
 
             
@@ -143,13 +149,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Commit Messages</li>
+      <li>Environments</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/guides/commit_messages.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/architecture/environments.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -162,41 +168,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="commit-messages">
-<h1>Commit Messages<a class="headerlink" href="#commit-messages" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/commithistory.png"><img alt="Screenshot of commit history in a repository" src="../_images/commithistory.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-text">Commit history in the Kids First Dataservice repository</span></p>
+  <div class="section" id="environments">
+<h1>Environments<a class="headerlink" href="#environments" title="Permalink to this headline">¶</a></h1>
+<p>Kids First is deployed through three levels of cloud environments, with the final being the live, production website.
+Services and infrastructure are mirrored throughout the different cloud environments to ensure consistency in the deployment and functionality between different software versions.
+Here, the different environments, their use, and restrictions are outlined.</p>
+<div class="figure align-center">
+<img alt="Environments" src="../_images/environment_stability.png" />
 </div>
-<p>Commit messages are vital in being able to navigate a code base’s history as well as enable easier and more productive code reviews.
-There are many resources providing best practices for commit messages:</p>
-<blockquote>
-<div><ul class="simple">
-<li><a class="reference external" href="https://chris.beams.io/posts/git-commit/">Git Commits</a></li>
-<li><a class="reference external" href="https://stackoverflow.com/questions/15324900/standard-to-follow-when-writing-git-commit-messages">Standard to follow when writing git commit messages</a></li>
-<li><a class="reference external" href="https://www.git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project#_commit_guidelines">git-scm Commit Guidelines</a></li>
-</ul>
-</div></blockquote>
-<p>Being proficient at the following git commands will greatly help to keep commits tidy:</p>
-<blockquote>
-<div><ul class="simple">
-<li><a class="reference external" href="https://www.git-scm.com/docs/git-rebase">git-rebase</a></li>
-<li><a class="reference external" href="https://www.git-scm.com/docs/git-blame">git-blame</a></li>
-<li><a class="reference external" href="https://git-scm.com/docs/git-cherry-pick">git-cherry-pick</a></li>
-</ul>
-</div></blockquote>
-<p>Here are more detailed how-tos using some of these commands with examples:</p>
-<blockquote>
-<div><ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">Rewriting History</a></li>
-<li><a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging">Interactive Staging</a></li>
-</ul>
-</div></blockquote>
-<p>We require commits to be prefixed with a single emoji that appropriately summarizes the the gist of the commit.
-This is helpful in allowing one to scan through the commit log visually inside of Github or be able to perform summary analysis inside of release notes or when analyzing git activity as a whole.
-When adding an emoji to the commit message, use the colon-ated version as opposed to the actual unicode symbol, eg: <cite>:sparkles:</cite>.
-For inspiration of what emoji may be most appropriate, see the <a class="reference external" href="https://gitmoji.carloscuesta.me">gitmoji guide</a>.
-There is also a <a class="reference external" href="https://github.com/carloscuesta/gitmoji-cli">gitmoji cli tool</a> to make it easier to author commit messages.</p>
+<div class="section" id="local">
+<h2>Local<a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h2>
+<p>The local environment is not a cloud environment, but rather a developer’s computer.
+There is no deployment pipelines here as the only concern is developing a codebase.
+The developer is in charge of configuring dependencies as needed for development.</p>
+</div>
+<div class="section" id="development-dev">
+<h2>Development - dev<a class="headerlink" href="#development-dev" title="Permalink to this headline">¶</a></h2>
+<p>The development environment is primarily used to ensure that deployment pipelines and infrastructure are being configured correctly.
+Most deployed codebases will deploy feature branches into the development environment.
+The development environment is strictly confined to internal users only.</p>
+</div>
+<div class="section" id="quality-assurance-qa">
+<h2>Quality Assurance - qa<a class="headerlink" href="#quality-assurance-qa" title="Permalink to this headline">¶</a></h2>
+<p>The QA environment is used for evaluating and testing the latest versions of software in conjunction with one another before releasing them to production.
+The QA environment is mostly confined to internal users only, although some exceptions may be made using whitelists if there are external stakeholders who may need to involved with testing features before they are released.</p>
+</div>
+<div class="section" id="production-prd">
+<h2>Production - prd<a class="headerlink" href="#production-prd" title="Permalink to this headline">¶</a></h2>
+<p>Production has the latest released software versions and is open to the internet.
+Codebases require rigorous approvals before reaching this stage, as outlined in <a class="reference internal" href="../development/feature_lifecycle.html#the-feature-lifecycle"><span class="std std-ref">The Feature Lifecycle</span></a>.</p>
+</div>
 </div>
 
 
@@ -207,10 +208,10 @@ There is also a <a class="reference external" href="https://github.com/carloscue
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pull_requests.html" class="btn btn-neutral float-right" title="Pull Requests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../guides/branches.html" class="btn btn-neutral float-right" title="Branches" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="branches.html" class="btn btn-neutral" title="Branches" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../development/cicd.html" class="btn btn-neutral" title="Continuous Deployment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
