@@ -27,6 +27,13 @@ Developer Handbook
 .. toctree::
    :glob:
    :maxdepth: 1
+   :caption: Data
+
+   data/*
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
    :caption: Architecture
 
    architecture/*
