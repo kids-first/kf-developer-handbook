@@ -5,7 +5,7 @@ Kids First is deployed through three levels of cloud environments, with the fina
 Services and infrastructure are mirrored throughout the different cloud environments to ensure consistency in the deployment and functionality between different software versions.
 Here, the different environments, their use, and restrictions are outlined.
 
-.. figure:: ../_static/images/environment_stability.png
+.. figure:: /_static/images/environment_stability.png
    :alt: Environments
    :align: center
 

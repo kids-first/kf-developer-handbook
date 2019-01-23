@@ -26,7 +26,7 @@ Pull requests should contain summary descriptions which outline the changes and 
 If the pull Request is closing a GitHub issue, make sure to mention the issue in the description, eg: `Closes #123`.
 See `Closing issues using keywords <https://help.github.com/articles/closing-issues-using-keywords>`_ for more information on this feature.
 
-.. figure:: ../_static/images/proper_pr_sidebar.png
+.. figure:: /_static/images/proper_pr_sidebar.png
    :figwidth: 70%
    :width: 70%
    :align: center
