@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Data Releases &mdash; Kids First Developer Handbook  documentation</title>
+  <title>Portal Data Flow &mdash; Kids First Developer Handbook  documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Portal Data Flow" href="portal_data_flow.html" />
-    <link rel="prev" title="Continuous Deployment" href="../development/cicd.html" /> 
+    <link rel="next" title="Environments" href="../architecture/environments.html" />
+    <link rel="prev" title="Data Releases" href="data_release.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -91,21 +91,17 @@
 </ul>
 <p class="caption"><span class="caption-text">Data</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Releases</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#release-process">Release Process</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#initiating-a-release">Initiating a Release</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#staging">Staging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#evaluating">Evaluating</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#publishing">Publishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_release.html">Data Releases</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Portal Data Flow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#source-data">Source Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ingestion">Ingestion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-service">Data Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-release">Data Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#portal-etl">Portal ETL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arranger">Arranger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#portal">Portal</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#version-numbers">Version Numbers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#major-and-minor-versions">Major and Minor Versions</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="portal_data_flow.html">Portal Data Flow</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Architecture</span></p>
 <ul>
@@ -162,13 +158,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Data Releases</li>
+      <li>Portal Data Flow</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/data/data_release.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/data/portal_data_flow.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -181,50 +177,49 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="data-releases">
-<h1>Data Releases<a class="headerlink" href="#data-releases" title="Permalink to this headline">¶</a></h1>
-<p>The act of releasing or updating data to the public is an integral part of Kids First.
-The process is deeply inspired by, but separate from, software releases.</p>
-<div class="section" id="release-process">
-<h2>Release Process<a class="headerlink" href="#release-process" title="Permalink to this headline">¶</a></h2>
-<p>Data releases require coordination between several different services and people.
-The Release Coordinator exists to manage this process of organizing processes and sign-offs.</p>
-<div class="section" id="initiating-a-release">
-<h3>Initiating a Release<a class="headerlink" href="#initiating-a-release" title="Permalink to this headline">¶</a></h3>
-<p>When new data has been added and finalized in the Data Service, and is now wanted for display on the portal, a new release should be initiated.
-This is done on a study basis, with the possibility to include many or all studies in a release.
-After selecting candidiate studies for the release within the Release Coordinator, the release may be started by staging the the new data.</p>
+  <div class="section" id="portal-data-flow">
+<h1>Portal Data Flow<a class="headerlink" href="#portal-data-flow" title="Permalink to this headline">¶</a></h1>
+<p>To understand how data arrives on the portal, it is necessary to understand the different components that data must flow through.</p>
+<div class="figure" id="id1">
+<img alt="Data flow to the portal" src="../_images/dataflow.png" />
+<p class="caption"><span class="caption-text">Data flow from source data to the portal</span></p>
 </div>
-<div class="section" id="staging">
-<h3>Staging<a class="headerlink" href="#staging" title="Permalink to this headline">¶</a></h3>
-<p>A release is staged by performing transformations from the Data Service’s data model necessary to display and publicize the data.
-These process include the heavy transformations, but do not include any actions that make any of the data public.
-Once these operations have been completed, a release is said to be <cite>staged</cite>.</p>
+<div class="section" id="source-data">
+<h2>Source Data<a class="headerlink" href="#source-data" title="Permalink to this headline">¶</a></h2>
+<p>Data arrives through various methods in various formats.
+Delivery methods are often csv, tsv, spreadsheets, or text either sent through email, or placed in internet accessible storage.</p>
 </div>
-<div class="section" id="evaluating">
-<h3>Evaluating<a class="headerlink" href="#evaluating" title="Permalink to this headline">¶</a></h3>
-<p>Once a release has reached the <cite>staged</cite> state, it is to be evaluated for publication.</p>
+<div class="section" id="ingestion">
+<h2>Ingestion<a class="headerlink" href="#ingestion" title="Permalink to this headline">¶</a></h2>
+<p>Source documents contain data that must be extracted into the Data Service’s data model.
+Due to the variable nature of the source data, extraction requires manual evaluation by one familiar with the Data Service’s model.
+Extraction can be performed with the aid of the <a class="reference external" href="https://github.com/kids-first/kf-lib-data-ingest">Data Ingest Library</a>.</p>
 </div>
-<div class="section" id="publishing">
-<h3>Publishing<a class="headerlink" href="#publishing" title="Permalink to this headline">¶</a></h3>
-<p>An administrator may <cite>publish</cite> a release once it has been deemed worthy.
-This operation involves all services making the result of their staging operation public.</p>
+<div class="section" id="data-service">
+<h2>Data Service<a class="headerlink" href="#data-service" title="Permalink to this headline">¶</a></h2>
+<p>The Data Service acts as both the data access layer as well as defines the data model for internal representation of the data.
+It exposes data via an http REST API.</p>
 </div>
+<div class="section" id="data-release">
+<h2>Data Release<a class="headerlink" href="#data-release" title="Permalink to this headline">¶</a></h2>
+<p>There is a hard limit before data moves on in its lifecycle.
+Progressing further in this pipeline from here will result in the data being made public.</p>
+<p>Read more about <a class="reference internal" href="data_release.html#data-releases"><span class="std std-ref">Data Releases</span></a></p>
 </div>
-<div class="section" id="version-numbers">
-<h2>Version Numbers<a class="headerlink" href="#version-numbers" title="Permalink to this headline">¶</a></h2>
-<p>Semantic version numbers are assigned to releases just as with software.
-For any new release, an incremented patch number will be assigned, eg: <cite>0.0.0</cite>.
-If that release fails or is not <cite>published</cite>, the next release will be assigned the next increment of the patch <cite>0.0.1</cite>.
-When finally a release is <cite>published</cite>, it will be promoted by incrementing its major or minor version and resetting the patch number.
-This is where the semantic version changes from the norm, as the previous version has been removed and replaced with a new major or minor version number.
-For example, if candidate release <cite>0.0.1</cite> is published, it will become <cite>0.1.0</cite> and <cite>0.0.1</cite> will no longer exist.</p>
-<div class="section" id="major-and-minor-versions">
-<h3>Major and Minor Versions<a class="headerlink" href="#major-and-minor-versions" title="Permalink to this headline">¶</a></h3>
-<p>The difference between major and minor releases is purely conceptual, there is no technical difference.
-A major release often involves a shape change in the data model and thus requires all previously released studies to be published again.
-A minor release will usually be updates or additions to select studies.</p>
+<div class="section" id="portal-etl">
+<h2>Portal ETL<a class="headerlink" href="#portal-etl" title="Permalink to this headline">¶</a></h2>
+<p>The Portal ETL transforms data within the Data Service to a form that is efficient for filtering by the end user and stores it inside Elastic Search.
+The ETL process is highly dependent on the Data Service’s data model and can suffer catastrophic failure when the Data Service’s data model changes in non-compatible ways.</p>
 </div>
+<div class="section" id="arranger">
+<h2>Arranger<a class="headerlink" href="#arranger" title="Permalink to this headline">¶</a></h2>
+<p>Arranger as a graphQL API that exposes data within Elastic Search to the portal interface.
+Arranger is highly dependent on the data model within Elastic Search.
+If the shape of Elastic Search indicies change, the Arranger API may cause errors until the data has been re-indexed by the Portal ETL to the correct shape, or Arranger has been configured with the correct shape.</p>
+</div>
+<div class="section" id="portal">
+<h2>Portal<a class="headerlink" href="#portal" title="Permalink to this headline">¶</a></h2>
+<p>The portal communicates with Arranger to fetch data depending on various filters and search terms that the user has entered.</p>
 </div>
 </div>
 
@@ -236,10 +231,10 @@ A minor release will usually be updates or additions to select studies.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="portal_data_flow.html" class="btn btn-neutral float-right" title="Portal Data Flow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../architecture/environments.html" class="btn btn-neutral float-right" title="Environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../development/cicd.html" class="btn btn-neutral" title="Continuous Deployment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="data_release.html" class="btn btn-neutral" title="Data Releases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
