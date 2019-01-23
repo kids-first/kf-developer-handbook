@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data Service &mdash; Kids First Developer Handbook  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Branches" href="../../guides/branches.html" />
+    <link rel="prev" title="Services" href="../index.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../development/feature_lifecycle.html">The Feature Lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/repositories.html">The Anatomy of a Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/software_releases.html">Software Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/cicd.html">Continuous Deployment</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../data/data_release.html">Data Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data/portal_data_flow.html">Portal Data Flow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Architecture</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../environments.html">Environments</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Services</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Data Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-access-layer">Data Access Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-model">Data Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#internal-design">Internal Design</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/branches.html">Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/commit_messages.html">Commit Messages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/pull_requests.html">Pull Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/python.html">Guidelines for Python Projects</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Kids First Developer Handbook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Services</a> &raquo;</li>
+        
+      <li>Data Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/architecture/services/dataservice.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-service">
+<h1>Data Service<a class="headerlink" href="#data-service" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center">
+<img alt="Data Service" src="https://raw.githubusercontent.com/kids-first/kf-api-dataservice/master/docs/dataservice.png" />
+</div>
+<p><a class="reference external" href="https://github.com/kids-first/kf-api-dataservice">GitHub Repository</a></p>
+<p><a class="reference external" href="http://kf-api-dataservice.kidsfirstdrc.org">Production URL and Swagger Documentation</a></p>
+<p>The Data Service provides a data access layer and defines the primary data model for Kids First data.</p>
+<div class="section" id="data-access-layer">
+<h2>Data Access Layer<a class="headerlink" href="#data-access-layer" title="Permalink to this headline">¶</a></h2>
+<p>The Data Service exposes an HTTP REST API for interacting with data stored in the Kids First.</p>
+</div>
+<div class="section" id="data-model">
+<h2>Data Model<a class="headerlink" href="#data-model" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id1">
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/kids-first/kf-api-dataservice/master/docs/erd.png"><img alt="Data Service" src="https://raw.githubusercontent.com/kids-first/kf-api-dataservice/master/docs/erd.png" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-text">The Entity Relation Diagram of the Data Service’s data model. Click for full size.</span></p>
+</div>
+</div>
+<div class="section" id="internal-design">
+<h2>Internal Design<a class="headerlink" href="#internal-design" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<img alt="Data Service Internal Design" src="../../_images/dataservice_internal.png" />
+</div>
+<p>The dataservice is a rudimentary <a class="reference external" href="http://flask.pocoo.org/">Flask</a> application that implements a RESTful JSON API.
+It stores most data inside a <a class="reference external" href="https://www.postgresql.org/">PostgreSQL</a> database, with the exception of a few components of the data model.
+These exceptions are fields related to files that are instead deferred to Indexd, which is another internal service used for federating data files.
+The Data Service handles these hybrid interactions internally making them transparent to the end user of the api.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../guides/branches.html" class="btn btn-neutral float-right" title="Branches" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Services" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Kids First
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

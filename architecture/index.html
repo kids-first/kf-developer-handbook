@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Commit Messages &mdash; Kids First Developer Handbook  documentation</title>
+  <title>Services &mdash; Kids First Developer Handbook  documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pull Requests" href="pull_requests.html" />
-    <link rel="prev" title="Branches" href="branches.html" /> 
+    <link rel="next" title="Data Service" href="services/dataservice.html" />
+    <link rel="prev" title="Environments" href="environments.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -95,16 +95,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../data/portal_data_flow.html">Portal Data Flow</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Architecture</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../architecture/environments.html">Environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Services</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="services/dataservice.html">Data Service</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="branches.html">Branches</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Commit Messages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pull_requests.html">Pull Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python.html">Guidelines for Python Projects</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/branches.html">Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/commit_messages.html">Commit Messages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/pull_requests.html">Pull Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/python.html">Guidelines for Python Projects</a></li>
 </ul>
 
             
@@ -150,13 +153,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Commit Messages</li>
+      <li>Services</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/guides/commit_messages.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/architecture/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -169,41 +172,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="commit-messages">
-<h1>Commit Messages<a class="headerlink" href="#commit-messages" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/commithistory.png"><img alt="Screenshot of commit history in a repository" src="../_images/commithistory.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-text">Commit history in the Kids First Dataservice repository</span></p>
+  <div class="section" id="services">
+<h1>Services<a class="headerlink" href="#services" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="services/dataservice.html">Data Service</a></li>
+</ul>
 </div>
-<p>Commit messages are vital in being able to navigate a code base’s history as well as enable easier and more productive code reviews.
-There are many resources providing best practices for commit messages:</p>
-<blockquote>
-<div><ul class="simple">
-<li><a class="reference external" href="https://chris.beams.io/posts/git-commit/">Git Commits</a></li>
-<li><a class="reference external" href="https://stackoverflow.com/questions/15324900/standard-to-follow-when-writing-git-commit-messages">Standard to follow when writing git commit messages</a></li>
-<li><a class="reference external" href="https://www.git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project#_commit_guidelines">git-scm Commit Guidelines</a></li>
-</ul>
-</div></blockquote>
-<p>Being proficient at the following git commands will greatly help to keep commits tidy:</p>
-<blockquote>
-<div><ul class="simple">
-<li><a class="reference external" href="https://www.git-scm.com/docs/git-rebase">git-rebase</a></li>
-<li><a class="reference external" href="https://www.git-scm.com/docs/git-blame">git-blame</a></li>
-<li><a class="reference external" href="https://git-scm.com/docs/git-cherry-pick">git-cherry-pick</a></li>
-</ul>
-</div></blockquote>
-<p>Here are more detailed how-tos using some of these commands with examples:</p>
-<blockquote>
-<div><ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">Rewriting History</a></li>
-<li><a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging">Interactive Staging</a></li>
-</ul>
-</div></blockquote>
-<p>We require commits to be prefixed with a single emoji that appropriately summarizes the the gist of the commit.
-This is helpful in allowing one to scan through the commit log visually inside of Github or be able to perform summary analysis inside of release notes or when analyzing git activity as a whole.
-When adding an emoji to the commit message, use the colon-ated version as opposed to the actual unicode symbol, eg: <cite>:sparkles:</cite>.
-For inspiration of what emoji may be most appropriate, see the <a class="reference external" href="https://gitmoji.carloscuesta.me">gitmoji guide</a>.
-There is also a <a class="reference external" href="https://github.com/carloscuesta/gitmoji-cli">gitmoji cli tool</a> to make it easier to author commit messages.</p>
 </div>
 
 
@@ -214,10 +189,10 @@ There is also a <a class="reference external" href="https://github.com/carloscue
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pull_requests.html" class="btn btn-neutral float-right" title="Pull Requests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="services/dataservice.html" class="btn btn-neutral float-right" title="Data Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="branches.html" class="btn btn-neutral" title="Branches" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="environments.html" class="btn btn-neutral" title="Environments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
