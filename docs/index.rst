@@ -43,4 +43,8 @@ Developer Handbook
    :glob:
    :caption: Guides
 
-   guides/*
+   guides/branches
+   guides/commit_messages
+   guides/pull_requests
+   guides/python
+   guides/javascript
