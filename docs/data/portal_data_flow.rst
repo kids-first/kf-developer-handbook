@@ -1,5 +1,5 @@
-Data Flow
-=========
+Portal Data Flow
+================
 
 To understand how data arrives on the portal, it is necessary to understand the different components that data must flow through.
 
