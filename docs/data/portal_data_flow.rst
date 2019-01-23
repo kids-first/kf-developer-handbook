@@ -1,5 +1,5 @@
-Data Flow
-=========
+Portal Data Flow
+================
 
 To understand how data arrives on the portal, it is necessary to understand the different components that data must flow through.
 
@@ -32,6 +32,8 @@ Data Release
 
 There is a hard limit before data moves on in its lifecycle.
 Progressing further in this pipeline from here will result in the data being made public.
+
+Read more about :ref:`Data Releases`
 
 Portal ETL
 ----------
