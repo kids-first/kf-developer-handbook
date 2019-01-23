@@ -1,7 +1,7 @@
 Commit Messages
 ===============
 
-.. figure:: ../_static/images/commithistory.png
+.. figure:: /_static/images/commithistory.png
    :alt: Screenshot of commit history in a repository
    :height: 400
    :align: center

@@ -10,7 +10,7 @@ Rebases are **required** over merges from master into the feature branch (easily
 Example
 -------
 
-.. figure:: ../_static/images/gitflow-Page-1.png
+.. figure:: /_static/images/gitflow-Page-1.png
    :alt: Feature branch
    
    Development of a new feature on a feature branch
@@ -21,7 +21,7 @@ Example
 4. Reviews are made and the developer continues modifying and adding commits to the `myfeature` branch
 5. When reviewers and status checks are positive, the developer will `git rebase` on the latest master, then merge the pull request
 
-.. figure:: ../_static/images/gitflow-Page-2.png
+.. figure:: /_static/images/gitflow-Page-2.png
    :alt: Release to production
    
    Deployment of master to production through a release branch and tag

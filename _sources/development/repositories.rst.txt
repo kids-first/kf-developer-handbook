@@ -9,7 +9,7 @@ Here, we lay out the fundamental components that each repository under the `Kids
 Header Preamble
 ===============
 
-.. figure:: _static/images/dataservice-repo-header.png
+.. figure:: /_static/images/dataservice-repo-header.png
    :alt: Dataservice's Repository Header Information
    
    The header components of the `Kids First Dataservice <http://github.com/kids-first/kf-api-dataservice>`_
@@ -45,7 +45,7 @@ Tags should be attached to describe the codebase and make it easier to discover 
 Required Files
 ==============
 
-.. figure:: _static/images/coordinator-repo-files.png
+.. figure:: /_static/images/coordinator-repo-files.png
    :alt: Release Coordinator's File Structure
 
    The file structure of the root of the Release Coordinator's codebase
@@ -81,7 +81,7 @@ The `README.md` file is important for providing more detailed information about 
 README
 ======
 
-.. figure:: _static/images/dataservice-repo-readme.png
+.. figure:: /_static/images/dataservice-repo-readme.png
    :alt: Dataservice's README
 
    The header of the Dataservice's README file as seen on its GitHub repository
@@ -115,7 +115,7 @@ Status Checks
 Status Checks are automated checks that test various aspects of the code to help ensure quality.
 Having relevant checks is a low-cost method of improving reliability of a code base.
 
-.. figure:: _static/images/dataservice-status-checks.png
+.. figure:: /_static/images/dataservice-status-checks.png
    :alt: Screenshot of a pull request's status checks inside a pull request
 
    Status checks as reported within a pull request against the Dataservice
