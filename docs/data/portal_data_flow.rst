@@ -33,6 +33,8 @@ Data Release
 There is a hard limit before data moves on in its lifecycle.
 Progressing further in this pipeline from here will result in the data being made public.
 
+Read more about :ref:`Data Releases`
+
 Portal ETL
 ----------
 
