@@ -5,16 +5,16 @@ Continuous Deployment
 Config Repositories
 ===================
 
-In addition to creating the main code repository, each code repository that is to be deployed must have a second, {\em private} repository that contains the infrastructure and CI/CD strategy for that code base.
-The repository for the config {\em must match the name of the code repository suffixed with *-config*}.
+In addition to creating the main code repository, each code repository that is to be deployed must have a second, *private* repository that contains the infrastructure and CI/CD strategy for that code base.
+The repository for the config *must match the name of the code repository suffixed with *-config**.
 This is a rule of thumb that is followed throughout so that the configuration may be discovered automatically by other scripts.
-In addition to the naming standard, the repository should be {\em private}.
+In addition to the naming standard, the repository should be *private*.
 It is best practice to keep the infrastructure obscured and prevent external contributions as the config contains code that is often run at elevated privileges in our environments.
 
 Environments
 ============
 
-Often, entire software stacks are deployed concurrently in many different {\em environments}. This provides us with a handful of benefits:
+Often, entire software stacks are deployed concurrently in many different *environments*. This provides us with a handful of benefits:
 
  - Assurance that there is always a stable deployment for end-users
  - Provides a safe sandbox to develop new features in isolation
