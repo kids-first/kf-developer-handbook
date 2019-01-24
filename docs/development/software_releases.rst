@@ -5,7 +5,7 @@ Software Releases
 Software releases well-oiled and frictionless to allow smooth deployment of frequent code updates and features.
 Having a process that makes releases and their changes highly visible is also an important part to improving situational awareness among stake holders.
 
-.. figure:: _static/images/dataservice-release-1.3.1.png
+.. figure:: /_static/images/dataservice-release-1.3.1.png
    :alt: Screenshot of Dataservice Release 1.3.1
 
    `Dataservice Release 1.3.1 <https://github.com/kids-first/kf-api-dataservice/releases/tag/1.3.1>`_ with summary statistics and change log
