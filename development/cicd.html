@@ -182,15 +182,15 @@
 <h1>Continuous Deployment<a class="headerlink" href="#continuous-deployment" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="config-repositories">
 <h2>Config Repositories<a class="headerlink" href="#config-repositories" title="Permalink to this headline">¶</a></h2>
-<p>In addition to creating the main code repository, each code repository that is to be deployed must have a second, {em private} repository that contains the infrastructure and CI/CD strategy for that code base.
-The repository for the config {em must match the name of the code repository suffixed with <em>-config</em>}.
+<p>In addition to creating the main code repository, each code repository that is to be deployed must have a second, <em>private</em> repository that contains the infrastructure and CI/CD strategy for that code base.
+The repository for the config <em>must match the name of the code repository suffixed with *-config*</em>.
 This is a rule of thumb that is followed throughout so that the configuration may be discovered automatically by other scripts.
-In addition to the naming standard, the repository should be {em private}.
+In addition to the naming standard, the repository should be <em>private</em>.
 It is best practice to keep the infrastructure obscured and prevent external contributions as the config contains code that is often run at elevated privileges in our environments.</p>
 </div>
 <div class="section" id="environments">
 <h2>Environments<a class="headerlink" href="#environments" title="Permalink to this headline">¶</a></h2>
-<p>Often, entire software stacks are deployed concurrently in many different {em environments}. This provides us with a handful of benefits:</p>
+<p>Often, entire software stacks are deployed concurrently in many different <em>environments</em>. This provides us with a handful of benefits:</p>
 <blockquote>
 <div><ul class="simple">
 <li>Assurance that there is always a stable deployment for end-users</li>
