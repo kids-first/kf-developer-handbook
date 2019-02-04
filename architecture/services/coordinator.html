@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Data Service &mdash; Kids First Developer Handbook  documentation</title>
+  <title>Release Coordinator &mdash; Kids First Developer Handbook  documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Release Coordinator" href="coordinator.html" />
-    <link rel="prev" title="Services" href="../index.html" /> 
+    <link rel="next" title="Branches" href="../../guides/branches.html" />
+    <link rel="prev" title="Data Service" href="dataservice.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -98,13 +98,11 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../environments.html">Environments</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Services</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Data Service</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#data-access-layer">Data Access Layer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data-model">Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dataservice.html">Data Service</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Release Coordinator</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#internal-design">Internal Design</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="coordinator.html">Release Coordinator</a></li>
 </ul>
 </li>
 </ul>
@@ -161,13 +159,13 @@
         
           <li><a href="../index.html">Services</a> &raquo;</li>
         
-      <li>Data Service</li>
+      <li>Release Coordinator</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/architecture/services/dataservice.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/architecture/services/coordinator.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -180,34 +178,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="data-service">
-<h1>Data Service<a class="headerlink" href="#data-service" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="release-coordinator">
+<h1>Release Coordinator<a class="headerlink" href="#release-coordinator" title="Permalink to this headline">¶</a></h1>
 <div class="figure align-center">
-<img alt="Data Service" src="https://raw.githubusercontent.com/kids-first/kf-api-dataservice/master/docs/dataservice.png" />
+<img alt="Release Coordinator" src="https://raw.githubusercontent.com/kids-first/kf-api-release-coordinator/master/docs/release_coordinator.png" />
 </div>
-<p><a class="reference external" href="https://github.com/kids-first/kf-api-dataservice">GitHub Repository</a></p>
-<p><a class="reference external" href="http://kf-api-dataservice.kidsfirstdrc.org">Production URL and Swagger Documentation</a></p>
-<p>The Data Service provides a data access layer and defines the primary data model for Kids First data.</p>
-<div class="section" id="data-access-layer">
-<h2>Data Access Layer<a class="headerlink" href="#data-access-layer" title="Permalink to this headline">¶</a></h2>
-<p>The Data Service exposes an HTTP REST API for interacting with data stored in the Kids First.</p>
-</div>
-<div class="section" id="data-model">
-<h2>Data Model<a class="headerlink" href="#data-model" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-center" id="id1">
-<a class="reference external image-reference" href="https://raw.githubusercontent.com/kids-first/kf-api-dataservice/master/docs/erd.png"><img alt="Data Service" src="https://raw.githubusercontent.com/kids-first/kf-api-dataservice/master/docs/erd.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-text">The Entity Relation Diagram of the Data Service’s data model. Click for full size.</span></p>
-</div>
-</div>
+<p><a class="reference external" href="https://github.com/kids-first/kf-api-release-coordinator">GitHub Repository</a></p>
+<p><a class="reference external" href="https://kf-ui-release-coordinator.kidsfirstdrc.org/">Production URL</a></p>
+<p><a class="reference external" href="http://kf-release-coord.kidsfirstdrc.org/redoc/">Swagger Documentation</a></p>
+<p>The Release Coordinator provides orchestration between services and people to produce <a class="reference internal" href="../../data/data_release.html#data-releases"><span class="std std-ref">Data Releases</span></a>.</p>
 <div class="section" id="internal-design">
 <h2>Internal Design<a class="headerlink" href="#internal-design" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center">
-<img alt="Data Service Internal Design" src="../../_images/dataservice_internal.png" />
+<img alt="Release Coordinator internal service design" src="_static/images/release_coordinator_internal.png" />
 </div>
-<p>The dataservice is a rudimentary <a class="reference external" href="http://flask.pocoo.org/">Flask</a> application that implements a RESTful JSON API.
-It stores most data inside a <a class="reference external" href="https://www.postgresql.org/">PostgreSQL</a> database, with the exception of a few components of the data model.
-These exceptions are fields related to files that are instead deferred to Indexd, which is another internal service used for federating data files.
-The Data Service handles these hybrid interactions internally making them transparent to the end user of the api.</p>
+<p>The Release Coordinator consists of a simple REST API implemented with the <a class="reference external" href="http://django-rest-framework.org/">Django REST Framework</a> to service requests from the internet, including the Release Coordinator UI.</p>
+<p>Upon starting a release, the coordinator will enter into the release pipeline, sending commands and monitoring status of tasks on external tasks that need to be run for a release.</p>
+<p>Requests are authenticated with Ego and are authorized based on the user’s roles.
+At the moment, all data is open for read, although performing actions, such as creating a release, are reserved for users of the ADMIN role.</p>
+<p>Cloudwatch issues periodic events to the API that will trigger internal checks such as task health checks and release status checks.
+These requests are to internet facing endpoints on the API, meaning they may also be triggered on demand by a user.</p>
+<p>Due to the need to communicate with a handful of external services, many actions that require potentially long-lived or unreliable requests are defered to a background worker service via a redis queue.</p>
 </div>
 </div>
 
@@ -219,10 +210,10 @@ The Data Service handles these hybrid interactions internally making them transp
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="coordinator.html" class="btn btn-neutral float-right" title="Release Coordinator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../guides/branches.html" class="btn btn-neutral float-right" title="Branches" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="Services" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="dataservice.html" class="btn btn-neutral" title="Data Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
