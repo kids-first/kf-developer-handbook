@@ -7,3 +7,4 @@ Services
 
    services/dataservice
    services/coordinator
+   services/bucketservice
