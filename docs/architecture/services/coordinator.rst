@@ -31,3 +31,11 @@ Cloudwatch issues periodic events to the API that will trigger internal checks s
 These requests are to internet facing endpoints on the API, meaning they may also be triggered on demand by a user.
 
 Due to the need to communicate with a handful of external services, many actions that require potentially long-lived or unreliable requests are defered to a background worker service via a redis queue.
+
+.. _release-task-service:
+
+Task Services
+------------
+
+Tasks are services that are invoked during the release process.
+These services perform some necessary step of a release such as etl, syncing, or reporting.
