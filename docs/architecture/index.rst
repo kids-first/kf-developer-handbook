@@ -23,3 +23,4 @@ A directory of different micro services in Kids First is listed below.
    services/dataservice
    services/coordinator
    services/bucketservice
+   services/releasereports
