@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Services &mdash; Kids First Developer Handbook  documentation</title>
+  <title>Micro Services &mdash; Kids First Developer Handbook  documentation</title>
   
 
   
@@ -97,10 +97,14 @@
 <p class="caption"><span class="caption-text">Architecture</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Services</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="services/dataservice.html">Data Service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="services/coordinator.html">Release Coordinator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="services/bucketservice.html">Bucket Service</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Micro Services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#application-types">Application Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#service-directory">Service Directory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="services/dataservice.html">Data Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="services/coordinator.html">Release Coordinator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="services/bucketservice.html">Bucket Service</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -155,7 +159,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Services</li>
+      <li>Micro Services</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -174,14 +178,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="services">
-<h1>Services<a class="headerlink" href="#services" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="micro-services">
+<h1>Micro Services<a class="headerlink" href="#micro-services" title="Permalink to this headline">¶</a></h1>
+<p>Kids First uses a <a class="reference external" href="https://microservices.io/patterns/microservices.html">Microserivces</a> pattern when developing applications.
+This allows quick and decoupled development and deployment process at the cost of more complicated design.</p>
+<div class="section" id="application-types">
+<h2>Application Types<a class="headerlink" href="#application-types" title="Permalink to this headline">¶</a></h2>
+<p>A handful of canned application types have been defined to allow for easier bootstrapping of new services.
+These application types are defined through <a class="reference external" href="https://www.terraform.io/">Terraform</a> configuration files, describing the infrastructure, and a <a class="reference external" href="https://jenkins.io/doc/book/pipeline/">Jenkins Pipeline</a> describing the continous delivery process of the code base.</p>
+</div>
+<div class="section" id="service-directory">
+<h2>Service Directory<a class="headerlink" href="#service-directory" title="Permalink to this headline">¶</a></h2>
+<p>A directory of different micro services in Kids First is listed below.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="services/dataservice.html">Data Service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="services/coordinator.html">Release Coordinator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="services/bucketservice.html">Bucket Service</a></li>
 </ul>
+</div>
 </div>
 </div>
 
