@@ -6,3 +6,4 @@ Services
    :glob:
 
    services/dataservice
+   services/coordinator
