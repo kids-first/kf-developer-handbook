@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Portal Data Flow &mdash; Kids First Developer Handbook  documentation</title>
+  <title>Distributed Data Types &mdash; Kids First Developer Handbook  documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Environments" href="../architecture/environments.html" />
-    <link rel="prev" title="Distributed Data Types" href="data_types.html" /> 
+    <link rel="next" title="Portal Data Flow" href="portal_data_flow.html" />
+    <link rel="prev" title="Data Releases" href="data_release.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -92,17 +92,22 @@
 <p class="caption"><span class="caption-text">Data</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="data_release.html">Data Releases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_types.html">Distributed Data Types</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Portal Data Flow</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#source-data">Source Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ingestion">Ingestion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#data-service">Data Service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#data-release">Data Release</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#portal-etl">Portal ETL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#arranger">Arranger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#portal">Portal</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Distributed Data Types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#genomic-data">Genomic Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#raw-reads-fastq-fq">Raw Reads - <cite>.fastq</cite>, <cite>.fq</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aligned-reads-bam-cram">Aligned Reads - <cite>.bam</cite>, <cite>.cram</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#index-files-bai-crai-tbi">Index Files - <cite>.bai</cite>, <cite>.crai</cite>, <cite>.tbi</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variant-calls-vcf-gvcf">Variant Calls - <cite>.vcf</cite>, <cite>.gvcf</cite></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#imaging-data">Imaging Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dicom">DICOM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slide-images-svs">Slide Images - <cite>.svs</cite></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="portal_data_flow.html">Portal Data Flow</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Architecture</span></p>
 <ul>
@@ -160,13 +165,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Portal Data Flow</li>
+      <li>Distributed Data Types</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/data/portal_data_flow.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/data/data_types.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -179,49 +184,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="portal-data-flow">
-<h1>Portal Data Flow<a class="headerlink" href="#portal-data-flow" title="Permalink to this headline">¶</a></h1>
-<p>To understand how data arrives on the portal, it is necessary to understand the different components that data must flow through.</p>
-<div class="figure" id="id1">
-<img alt="Data flow to the portal" src="../_images/dataflow.png" />
-<p class="caption"><span class="caption-text">Data flow from source data to the portal</span></p>
+  <div class="section" id="distributed-data-types">
+<h1>Distributed Data Types<a class="headerlink" href="#distributed-data-types" title="Permalink to this headline">¶</a></h1>
+<p>The Kids First is responsible for distributing a wide variety of data, in many different formats.</p>
+<div class="section" id="genomic-data">
+<h2>Genomic Data<a class="headerlink" href="#genomic-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="raw-reads-fastq-fq">
+<h3>Raw Reads - <cite>.fastq</cite>, <cite>.fq</cite><a class="headerlink" href="#raw-reads-fastq-fq" title="Permalink to this headline">¶</a></h3>
+<p><cite>.fastq</cite> and <cite>.fq</cite> are files that contain raw read data from the sequencer.
+These files contain simple ACTG nucleotide sequences and corresponding quality information.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/FASTQ_format">Read more about FASTQ</a></p>
 </div>
-<div class="section" id="source-data">
-<h2>Source Data<a class="headerlink" href="#source-data" title="Permalink to this headline">¶</a></h2>
-<p>Data arrives through various methods in various formats.
-Delivery methods are often csv, tsv, spreadsheets, or text either sent through email, or placed in internet accessible storage.</p>
+<div class="section" id="aligned-reads-bam-cram">
+<h3>Aligned Reads - <cite>.bam</cite>, <cite>.cram</cite><a class="headerlink" href="#aligned-reads-bam-cram" title="Permalink to this headline">¶</a></h3>
+<p><cite>.bam</cite> and <cite>.cram</cite> are formats that contain sequencer reads that have been aligned with a base genome.</p>
+<p><a class="reference external" href="https://samtools.github.io/hts-specs/SAMv1.pdf">Read more about BAM</a>
+<a class="reference external" href="https://samtools.github.io/hts-specs/CRAMv3.pdf">Read more about CRAM</a></p>
 </div>
-<div class="section" id="ingestion">
-<h2>Ingestion<a class="headerlink" href="#ingestion" title="Permalink to this headline">¶</a></h2>
-<p>Source documents contain data that must be extracted into the Data Service’s data model.
-Due to the variable nature of the source data, extraction requires manual evaluation by one familiar with the Data Service’s model.
-Extraction can be performed with the aid of the <a class="reference external" href="https://github.com/kids-first/kf-lib-data-ingest">Data Ingest Library</a>.</p>
+<div class="section" id="index-files-bai-crai-tbi">
+<h3>Index Files - <cite>.bai</cite>, <cite>.crai</cite>, <cite>.tbi</cite><a class="headerlink" href="#index-files-bai-crai-tbi" title="Permalink to this headline">¶</a></h3>
+<p>Because genomic files can often reach up to several hundred gigabytes per file, they are often accompanied by an index file to reduce seek time.</p>
+<p><a class="reference external" href="https://samtools.github.io/hts-specs/tabix.pdf">Read more about Tabix index files</a></p>
 </div>
-<div class="section" id="data-service">
-<h2>Data Service<a class="headerlink" href="#data-service" title="Permalink to this headline">¶</a></h2>
-<p>The Data Service acts as both the data access layer as well as defines the data model for internal representation of the data.
-It exposes data via an http REST API.</p>
+<div class="section" id="variant-calls-vcf-gvcf">
+<h3>Variant Calls - <cite>.vcf</cite>, <cite>.gvcf</cite><a class="headerlink" href="#variant-calls-vcf-gvcf" title="Permalink to this headline">¶</a></h3>
+<p><cite>.vcf</cite> and <cite>.gvcf</cite> are analyisis upon <cite>.bam</cite> and <cite>.cram</cite> files.</p>
+<p><a class="reference external" href="https://samtools.github.io/hts-specs/VCFv4.2.pdf">Read more about VCF</a>
+<a class="reference external" href="https://software.broadinstitute.org/gatk/documentation/article.php?id=4017">Read more about GVCF</a></p>
 </div>
-<div class="section" id="data-release">
-<h2>Data Release<a class="headerlink" href="#data-release" title="Permalink to this headline">¶</a></h2>
-<p>There is a hard limit before data moves on in its lifecycle.
-Progressing further in this pipeline from here will result in the data being made public.</p>
-<p>Read more about <a class="reference internal" href="data_release.html#data-releases"><span class="std std-ref">Data Releases</span></a></p>
 </div>
-<div class="section" id="portal-etl">
-<h2>Portal ETL<a class="headerlink" href="#portal-etl" title="Permalink to this headline">¶</a></h2>
-<p>The Portal ETL transforms data within the Data Service to a form that is efficient for filtering by the end user and stores it inside Elastic Search.
-The ETL process is highly dependent on the Data Service’s data model and can suffer catastrophic failure when the Data Service’s data model changes in non-compatible ways.</p>
+<div class="section" id="imaging-data">
+<h2>Imaging Data<a class="headerlink" href="#imaging-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dicom">
+<h3>DICOM<a class="headerlink" href="#dicom" title="Permalink to this headline">¶</a></h3>
+<p>Dicom files are a general file format that can hold various types of data, although they will typically contain imagery in the context of Kids First.</p>
+<p><a class="reference external" href="https://www.dicomstandard.org/current/">Read more about the DICOM format</a></p>
 </div>
-<div class="section" id="arranger">
-<h2>Arranger<a class="headerlink" href="#arranger" title="Permalink to this headline">¶</a></h2>
-<p>Arranger as a graphQL API that exposes data within Elastic Search to the portal interface.
-Arranger is highly dependent on the data model within Elastic Search.
-If the shape of Elastic Search indicies change, the Arranger API may cause errors until the data has been re-indexed by the Portal ETL to the correct shape, or Arranger has been configured with the correct shape.</p>
+<div class="section" id="slide-images-svs">
+<h3>Slide Images - <cite>.svs</cite><a class="headerlink" href="#slide-images-svs" title="Permalink to this headline">¶</a></h3>
+<p><cite>.svs</cite> files are high-resolution images of tissue slides.
+The format is similar to <cite>.tiff</cite>, but with a hierarchical structure.</p>
+<p><a class="reference external" href="https://openslide.org/formats/aperio/">Read more about the SVS format</a></p>
 </div>
-<div class="section" id="portal">
-<h2>Portal<a class="headerlink" href="#portal" title="Permalink to this headline">¶</a></h2>
-<p>The portal communicates with Arranger to fetch data depending on various filters and search terms that the user has entered.</p>
 </div>
 </div>
 
@@ -233,10 +237,10 @@ If the shape of Elastic Search indicies change, the Arranger API may cause error
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../architecture/environments.html" class="btn btn-neutral float-right" title="Environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="portal_data_flow.html" class="btn btn-neutral float-right" title="Portal Data Flow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="data_types.html" class="btn btn-neutral" title="Distributed Data Types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="data_release.html" class="btn btn-neutral" title="Data Releases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
