@@ -33,7 +33,7 @@ Developer Handbook
 
 .. toctree::
    :glob:
-   :maxdepth: 1
+   :maxdepth: 3
    :caption: Architecture
 
    architecture/*
