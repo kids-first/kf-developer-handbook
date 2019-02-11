@@ -53,8 +53,9 @@ Required Files
 .gitignore
 ----------
 
-An appropriate `.gitignore` is important to prevent against commiting of files that do not need to be tracked.
+An appropriate ``.gitignore`` is important to prevent against commiting of files that do not need to be tracked.
 This file's contents will be determined by the codebase.
+There are are a number of precompiled ``.gitignore`` files available on `GitHub <https://github.com/github/gitignore>`_ for easy reference.
 
 Dockerfile
 ----------
