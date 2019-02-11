@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Bucket Service &mdash; Kids First Developer Handbook  documentation</title>
+  <title>Ego &mdash; Kids First Developer Handbook  documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Release Reports" href="releasereports.html" />
-    <link rel="prev" title="Release Coordinator" href="coordinator.html" /> 
+    <link rel="next" title="Branches" href="../../guides/branches.html" />
+    <link rel="prev" title="Release Reports" href="releasereports.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -103,13 +103,16 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#service-directory">Service Directory</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="dataservice.html">Data Service</a></li>
 <li class="toctree-l3"><a class="reference internal" href="coordinator.html">Release Coordinator</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Bucket Service</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#behavior">Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#bucket-configuration">Bucket Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bucketservice.html">Bucket Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releasereports.html">Release Reports</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Ego</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#use-within-applications">Use Within Applications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#social-authentication">Social Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#roles">Roles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#groups">Groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#services">Services</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="releasereports.html">Release Reports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ego.html">Ego</a></li>
 </ul>
 </li>
 </ul>
@@ -168,13 +171,13 @@
         
           <li><a href="../index.html">Micro Services</a> &raquo;</li>
         
-      <li>Bucket Service</li>
+      <li>Ego</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/architecture/services/bucketservice.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/architecture/services/ego.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -187,47 +190,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="bucket-service">
-<h1>Bucket Service<a class="headerlink" href="#bucket-service" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-center">
-<img alt="Bucket Service" src="https://raw.githubusercontent.com/kids-first/kf-api-bucketservice/master/docs/bucket_service.svg?sanitize=true" />
+  <div class="section" id="ego">
+<h1>Ego<a class="headerlink" href="#ego" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/overture-stack/ego">GitHub Repository</a></p>
+<p>Ego provides an authentication service for other Kids First services.</p>
+<div class="figure" id="id1">
+<img alt="Interaction with ego" src="_static/images/ego.png" />
+<p class="caption"><span class="caption-text">Typical interaction with ego from a web application</span></p>
 </div>
-<p><a class="reference external" href="https://github.com/kids-first/kf-api-buckteservice">GitHub Repository</a></p>
-<p>The Bucket Service controls configuration of S3 buckets for new studies.</p>
-<p>It provides a simple REST API in a lambda behind API Gateway that is only available internally to the VPC.</p>
-<p>The primary method of invocation is through creating a new study through the <a class="reference internal" href="../../data/portal_data_flow.html#data-service"><span class="std std-ref">Data Service</span></a>.</p>
-<div class="section" id="behavior">
-<h2>Behavior<a class="headerlink" href="#behavior" title="Permalink to this headline">¶</a></h2>
-<p>The Bucket Service will only <em>create</em> new buckets, it will not remove old buckets, even when they are removed within the <a class="reference internal" href="../../data/portal_data_flow.html#data-service"><span class="std std-ref">Data Service</span></a>.
-This is to protect against accidental deletion of data.</p>
+<div class="section" id="use-within-applications">
+<h2>Use Within Applications<a class="headerlink" href="#use-within-applications" title="Permalink to this headline">¶</a></h2>
+<p>Front facing applications such as the portal or release coordinator UI interact with Ego to obtain a token that may be used to authenticate with other services.
+In the above example, the portal has a short exchange with Ego wherein an Ego token is aquired.
+From there, the portal will store the token then use it to verify the current user has been authenticated when talking with other services.</p>
+<p>Services that recieve these requests containing the user’s token will verify that the token was indeed minted by Ego by either passing the token back to Ego for verification, or verifying that it has been signed by Ego by using Ego’s public key.</p>
 </div>
-<div class="section" id="bucket-configuration">
-<h2>Bucket Configuration<a class="headerlink" href="#bucket-configuration" title="Permalink to this headline">¶</a></h2>
-<p>A few different settings are applied to a new bucket upon creation.</p>
-<div class="section" id="naming">
-<h3>Naming<a class="headerlink" href="#naming" title="Permalink to this headline">¶</a></h3>
-<p>Study buckets are named in the form <cite>kf-study-{region}-{env}-{kf id}</cite>.
-Here, <cite>kf id</cite> is lowercase and uses a hyphen, <cite>-</cite>, in place of the underscore, <cite>_</cite>, to conform to s3 naming standards.
-The data recovery buckets are named in the form <cite>kf-study-{region}-{env}-{kf id}-dr</cite>.
-Where <cite>region</cite> is a different aws region than the primary study bucket, to ensure regional redundancy.</p>
+<div class="section" id="social-authentication">
+<h2>Social Authentication<a class="headerlink" href="#social-authentication" title="Permalink to this headline">¶</a></h2>
+<p>Ego allows users to authenticate and register through various single sign-on providers (SSO) such as Google, Facebook, and LinkedIn.
+When a user authenticates with one of these providers using the OAuth2 flow, an access token is returned to the user which is then sent to Ego.
+Ego will register this user, if they have never been seen before, and issue its own token to the user to include with all future requests.</p>
 </div>
-<div class="section" id="access-logging">
-<h3>Access Logging<a class="headerlink" href="#access-logging" title="Permalink to this headline">¶</a></h3>
-<p>S3 access logging is turned on so that an audit log is available for objects within the new study bucket.</p>
+<div class="section" id="roles">
+<h2>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h2>
+<p>There are currently only two roles that are used in Ego: <code class="docutils literal notranslate"><span class="pre">user</span></code> and <code class="docutils literal notranslate"><span class="pre">admin</span></code>.</p>
 </div>
-<div class="section" id="encryption">
-<h3>Encryption<a class="headerlink" href="#encryption" title="Permalink to this headline">¶</a></h3>
-<p>Encryption is enabled for the bucket meaning that new objects are encrypted in place for security purposes.</p>
+<div class="section" id="groups">
+<h2>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">¶</a></h2>
+<p>Groups add another level to user permissions inside Ego, although they are currently only used to differentiate internal users from others for analytical purposes.</p>
 </div>
-<div class="section" id="replication">
-<h3>Replication<a class="headerlink" href="#replication" title="Permalink to this headline">¶</a></h3>
-<p>Cross region replication is enabled for the bucket so that a redundant backup is available in case of some region-wide failure of S3.
-The data recovery bucket, suffixed with <cite>-dr</cite>, uses <a class="reference external" href="https://aws.amazon.com/glacier/">Glacier</a> tier storage to reduce costs of the redundency.</p>
-</div>
-<div class="section" id="versioning">
-<h3>Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h3>
-<p>Object versioning is enabled to allow replication, but also make historical versions of a file available in the case that a file is overwritten with incorrect data.</p>
-</div>
+<div class="section" id="services">
+<h2>Services<a class="headerlink" href="#services" title="Permalink to this headline">¶</a></h2>
+<p>Services may also be registered via Ego so that they may be authenticated by other services.</p>
 </div>
 </div>
 
@@ -239,10 +233,10 @@ The data recovery bucket, suffixed with <cite>-dr</cite>, uses <a class="referen
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="releasereports.html" class="btn btn-neutral float-right" title="Release Reports" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../guides/branches.html" class="btn btn-neutral float-right" title="Branches" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="coordinator.html" class="btn btn-neutral" title="Release Coordinator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="releasereports.html" class="btn btn-neutral" title="Release Reports" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
