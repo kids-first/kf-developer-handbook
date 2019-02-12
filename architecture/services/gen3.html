@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Ego &mdash; Kids First Developer Handbook  documentation</title>
+  <title>Gen3 &mdash; Kids First Developer Handbook  documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Gen3" href="gen3.html" />
-    <link rel="prev" title="Release Reports" href="releasereports.html" /> 
+    <link rel="next" title="Branches" href="../../guides/branches.html" />
+    <link rel="prev" title="Ego" href="ego.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -105,15 +105,12 @@
 <li class="toctree-l3"><a class="reference internal" href="coordinator.html">Release Coordinator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bucketservice.html">Bucket Service</a></li>
 <li class="toctree-l3"><a class="reference internal" href="releasereports.html">Release Reports</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Ego</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#use-within-applications">Use Within Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#social-authentication">Social Authentication</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#roles">Roles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#groups">Groups</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#services">Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ego.html">Ego</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Gen3</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#indexd">Indexd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fence">Fence</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="gen3.html">Gen3</a></li>
 </ul>
 </li>
 </ul>
@@ -172,13 +169,13 @@
         
           <li><a href="../index.html">Micro Services</a> &raquo;</li>
         
-      <li>Ego</li>
+      <li>Gen3</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/architecture/services/ego.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/architecture/services/gen3.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -191,38 +188,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ego">
-<h1>Ego<a class="headerlink" href="#ego" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/overture-stack/ego">GitHub Repository</a></p>
-<p>Ego provides an authentication service for other Kids First services.</p>
-<div class="figure" id="id1">
-<img alt="Interaction with ego" src="_static/images/ego.png" />
-<p class="caption"><span class="caption-text">Typical interaction with ego from a web application</span></p>
+  <div class="section" id="gen3">
+<h1>Gen3<a class="headerlink" href="#gen3" title="Permalink to this headline">¶</a></h1>
+<p>Gen3 is a collection of services that handle distribution of files in Kids First.</p>
+<div class="section" id="indexd">
+<h2>Indexd<a class="headerlink" href="#indexd" title="Permalink to this headline">¶</a></h2>
+<p>The indexd service catelogs files in Kids First.
+This includes tracking information about file name, size, hash, storage location, and access controls.
+The <span class="xref std std-ref">DataService</span> interacts with indexd to register files in coordination with its own internal model.</p>
 </div>
-<div class="section" id="use-within-applications">
-<h2>Use Within Applications<a class="headerlink" href="#use-within-applications" title="Permalink to this headline">¶</a></h2>
-<p>Front facing applications such as the portal or release coordinator UI interact with Ego to obtain a token that may be used to authenticate with other services.
-In the above example, the portal has a short exchange with Ego wherein an Ego token is aquired.
-From there, the portal will store the token then use it to verify the current user has been authenticated when talking with other services.</p>
-<p>Services that recieve these requests containing the user’s token will verify that the token was indeed minted by Ego by either passing the token back to Ego for verification, or verifying that it has been signed by Ego by using Ego’s public key.</p>
-</div>
-<div class="section" id="social-authentication">
-<h2>Social Authentication<a class="headerlink" href="#social-authentication" title="Permalink to this headline">¶</a></h2>
-<p>Ego allows users to authenticate and register through various single sign-on providers (SSO) such as Google, Facebook, and LinkedIn.
-When a user authenticates with one of these providers using the OAuth2 flow, an access token is returned to the user which is then sent to Ego.
-Ego will register this user, if they have never been seen before, and issue its own token to the user to include with all future requests.</p>
-</div>
-<div class="section" id="roles">
-<h2>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h2>
-<p>There are currently only two roles that are used in Ego: <code class="docutils literal notranslate"><span class="pre">user</span></code> and <code class="docutils literal notranslate"><span class="pre">admin</span></code>.</p>
-</div>
-<div class="section" id="groups">
-<h2>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">¶</a></h2>
-<p>Groups add another level to user permissions inside Ego, although they are currently only used to differentiate internal users from others for analytical purposes.</p>
-</div>
-<div class="section" id="services">
-<h2>Services<a class="headerlink" href="#services" title="Permalink to this headline">¶</a></h2>
-<p>Services may also be registered via Ego so that they may be authenticated by other services.</p>
+<div class="section" id="fence">
+<h2>Fence<a class="headerlink" href="#fence" title="Permalink to this headline">¶</a></h2>
+<p>Fence generates signed download urls for files within indexd depending on whether or not a user is allowed permission to that file.
+Permission is determined by whether a user has a certain access code in their eRa account that matches one of the access codes on the corresponding indexd document.
+For example, a user would like to download a file that has <code class="docutils literal notranslate"><span class="pre">phs000178</span></code> in its acl.
+To be able to generate a signed url and download the file, fence will check if the currently authenticated user has <code class="docutils literal notranslate"><span class="pre">phs000178</span></code> in their eRa projects list.</p>
 </div>
 </div>
 
@@ -234,10 +214,10 @@ Ego will register this user, if they have never been seen before, and issue its 
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="gen3.html" class="btn btn-neutral float-right" title="Gen3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../guides/branches.html" class="btn btn-neutral float-right" title="Branches" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="releasereports.html" class="btn btn-neutral" title="Release Reports" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ego.html" class="btn btn-neutral" title="Ego" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
