@@ -25,3 +25,4 @@ A directory of different micro services in Kids First is listed below.
    services/bucketservice
    services/releasereports
    services/ego
+   services/gen3
