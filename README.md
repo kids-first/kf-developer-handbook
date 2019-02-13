@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 To run the docs and auto-reload them as they are edited, run:
 ```
-sphinx-autobuild source docs
+sphinx-autobuild docs/ build -p 8000
 ```
 The docs will be available on localhost:8000 by default.
 
