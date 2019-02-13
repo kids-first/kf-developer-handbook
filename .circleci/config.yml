@@ -14,6 +14,7 @@ jobs:
             git clone https://${GITHUB_TOKEN}@github.com/kids-first/kf-developer-handbook.git
             cd kf-developer-handbook
             pip install -r requirements.txt
+            doc8 docs
             sphinx-build docs staged
             touch staged/.nojekyll
       - deploy:
