@@ -21,6 +21,14 @@ sphinx-autobuild docs/ build -p 8000
 ```
 The docs will be available on localhost:8000 by default.
 
+## Building
+
+To build the static website, run:
+```
+sphinx-build docs build
+```
+This will place the files inside the `build` directory.
+
 ## Contributing a change
 
 Make changes and additions to the documention source files in the `docs/`
