@@ -178,33 +178,41 @@
             
   <div class="section" id="environments">
 <h1>Environments<a class="headerlink" href="#environments" title="Permalink to this headline">¶</a></h1>
-<p>Kids First is deployed through three levels of cloud environments, with the final being the live, production website.
-Services and infrastructure are mirrored throughout the different cloud environments to ensure consistency in the deployment and functionality between different software versions.
-Here, the different environments, their use, and restrictions are outlined.</p>
+<p>Kids First is deployed through three levels of cloud environments, with the
+final being the live, production website. Services and infrastructure are
+mirrored throughout the different cloud environments to ensure consistency in
+the deployment and functionality between different software versions. Here, the
+different environments, their use, and restrictions are outlined.</p>
 <div class="figure align-center">
 <img alt="Environments" src="../_images/environment_stability.png" />
 </div>
 <div class="section" id="local">
 <h2>Local<a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h2>
-<p>The local environment is not a cloud environment, but rather a developer’s computer.
-There is no deployment pipelines here as the only concern is developing a codebase.
-The developer is in charge of configuring dependencies as needed for development.</p>
+<p>The local environment is not a cloud environment, but rather a developer’s
+computer. There is no deployment pipelines here as the only concern is
+developing a codebase. The developer is in charge of configuring dependencies
+as needed for development.</p>
 </div>
 <div class="section" id="development-dev">
 <h2>Development - dev<a class="headerlink" href="#development-dev" title="Permalink to this headline">¶</a></h2>
-<p>The development environment is primarily used to ensure that deployment pipelines and infrastructure are being configured correctly.
-Most deployed codebases will deploy feature branches into the development environment.
-The development environment is strictly confined to internal users only.</p>
+<p>The development environment is primarily used to ensure that deployment
+pipelines and infrastructure are being configured correctly. Most deployed
+codebases will deploy feature branches into the development environment. The
+development environment is strictly confined to internal users only.</p>
 </div>
 <div class="section" id="quality-assurance-qa">
 <h2>Quality Assurance - qa<a class="headerlink" href="#quality-assurance-qa" title="Permalink to this headline">¶</a></h2>
-<p>The QA environment is used for evaluating and testing the latest versions of software in conjunction with one another before releasing them to production.
-The QA environment is mostly confined to internal users only, although some exceptions may be made using whitelists if there are external stakeholders who may need to involved with testing features before they are released.</p>
+<p>The QA environment is used for evaluating and testing the latest versions of
+software in conjunction with one another before releasing them to production.
+The QA environment is mostly confined to internal users only, although some
+exceptions may be made using whitelists if there are external stakeholders who
+may need to involved with testing features before they are released.</p>
 </div>
 <div class="section" id="production-prd">
 <h2>Production - prd<a class="headerlink" href="#production-prd" title="Permalink to this headline">¶</a></h2>
-<p>Production has the latest released software versions and is open to the internet.
-Codebases require rigorous approvals before reaching this stage, as outlined in <a class="reference internal" href="../development/feature_lifecycle.html#the-feature-lifecycle"><span class="std std-ref">The Feature Lifecycle</span></a>.</p>
+<p>Production has the latest released software versions and is open to the
+internet. Codebases require rigorous approvals before reaching this stage, as
+outlined in <a class="reference internal" href="../development/feature_lifecycle.html#the-feature-lifecycle"><span class="std std-ref">The Feature Lifecycle</span></a>.</p>
 </div>
 </div>
 

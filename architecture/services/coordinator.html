@@ -196,24 +196,34 @@
 <p><a class="reference external" href="https://github.com/kids-first/kf-api-release-coordinator">GitHub Repository</a></p>
 <p><a class="reference external" href="https://kf-ui-release-coordinator.kidsfirstdrc.org/">Production URL</a></p>
 <p><a class="reference external" href="http://kf-release-coord.kidsfirstdrc.org/redoc/">Swagger Documentation</a></p>
-<p>The Release Coordinator provides orchestration between services and people to produce <a class="reference internal" href="../../data/data_release.html#data-releases"><span class="std std-ref">Data Releases</span></a>.</p>
+<p>The Release Coordinator provides orchestration between services and people to
+produce <a class="reference internal" href="../../data/data_release.html#data-releases"><span class="std std-ref">Data Releases</span></a>.</p>
 <div class="section" id="internal-design">
 <h2>Internal Design<a class="headerlink" href="#internal-design" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center">
 <img alt="Release Coordinator internal service design" src="_static/images/release_coordinator_internal.png" />
 </div>
-<p>The Release Coordinator consists of a simple REST API implemented with the <a class="reference external" href="http://django-rest-framework.org/">Django REST Framework</a> to service requests from the internet, including the Release Coordinator UI.</p>
-<p>Upon starting a release, the coordinator will enter into the release pipeline, sending commands and monitoring status of tasks on external tasks that need to be run for a release.</p>
-<p>Requests are authenticated with Ego and are authorized based on the user’s roles.
-At the moment, all data is open for read, although performing actions, such as creating a release, are reserved for users of the ADMIN role.</p>
-<p>Cloudwatch issues periodic events to the API that will trigger internal checks such as task health checks and release status checks.
-These requests are to internet facing endpoints on the API, meaning they may also be triggered on demand by a user.</p>
-<p>Due to the need to communicate with a handful of external services, many actions that require potentially long-lived or unreliable requests are defered to a background worker service via a redis queue.</p>
+<p>The Release Coordinator consists of a simple REST API implemented with the
+<a class="reference external" href="http://django-rest-framework.org/">Django REST Framework</a> to service
+requests from the internet, including the Release Coordinator UI.</p>
+<p>Upon starting a release, the coordinator will enter into the release pipeline,
+sending commands and monitoring status of tasks on external tasks that need to
+be run for a release.</p>
+<p>Requests are authenticated with Ego and are authorized based on the user’s
+roles. At the moment, all data is open for read, although performing actions,
+such as creating a release, are reserved for users of the ADMIN role.</p>
+<p>Cloudwatch issues periodic events to the API that will trigger internal checks
+such as task health checks and release status checks. These requests are to
+internet facing endpoints on the API, meaning they may also be triggered on
+demand by a user.</p>
+<p>Due to the need to communicate with a handful of external services, many
+actions that require potentially long-lived or unreliable requests are defered
+to a background worker service via a redis queue.</p>
 </div>
 <div class="section" id="task-services">
 <span id="release-task-service"></span><h2>Task Services<a class="headerlink" href="#task-services" title="Permalink to this headline">¶</a></h2>
-<p>Tasks are services that are invoked during the release process.
-These services perform some necessary step of a release such as etl, syncing, or reporting.</p>
+<p>Tasks are services that are invoked during the release process. These services
+perform some necessary step of a release such as etl, syncing, or reporting.</p>
 </div>
 </div>
 

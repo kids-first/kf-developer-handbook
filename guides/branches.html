@@ -175,10 +175,16 @@
             
   <div class="section" id="branches">
 <h1>Branches<a class="headerlink" href="#branches" title="Permalink to this headline">¶</a></h1>
-<p>The branching strategy in Kids First repositories is kept simple to reduce the amount of contextual awareness needed to keep branches in sync, understand the state of different branches, and reduce the number of often over-aged pull requests that need to be merged.</p>
-<p>Kids First uses <a class="reference external" href="https://guides.github.com/introduction/flow/">GitHub flow</a> for its repositories whith release tags being made directly on <cite>master</cite>.
-Branches ready for merge in a Pull Request are required to rebase on the latest master to ensure compatability.
-Rebases are <strong>required</strong> over merges from master into the feature branch (easily done through the GitHub interface) to avoid commit histories full of updates from master.</p>
+<p>The branching strategy in Kids First repositories is kept simple to reduce the
+amount of contextual awareness needed to keep branches in sync, understand the
+state of different branches, and reduce the number of often over-aged pull
+requests that need to be merged.</p>
+<p>Kids First uses <a class="reference external" href="https://guides.github.com/introduction/flow/">GitHub flow</a>
+for its repositories whith release tags being made directly on <cite>master</cite>.
+Branches ready for merge in a Pull Request are required to rebase on the latest
+master to ensure compatability. Rebases are <strong>required</strong> over merges from
+master into the feature branch (easily done through the GitHub interface) to
+avoid commit histories full of updates from master.</p>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <div class="figure" id="id1">
@@ -186,20 +192,29 @@ Rebases are <strong>required</strong> over merges from master into the feature b
 <p class="caption"><span class="caption-text">Development of a new feature on a feature branch</span></p>
 </div>
 <ol class="arabic simple">
-<li>A developer begins work on a new feature by making commits to a new <cite>myfeature</cite> branch</li>
-<li>Each commit pushed to GitHub will trigger status checks for the HEAD of the branch as well as deploy into the <cite>dev</cite> environment</li>
-<li>The developer creates a Pull Request (#1) to merge <cite>myfeature</cite> into the <cite>master</cite> branch</li>
-<li>Reviews are made and the developer continues modifying and adding commits to the <cite>myfeature</cite> branch</li>
-<li>When reviewers and status checks are positive, the developer will <cite>git rebase</cite> on the latest master, then merge the pull request</li>
+<li>A developer begins work on a new feature by making commits to a new
+<cite>myfeature</cite> branch</li>
+<li>Each commit pushed to GitHub will trigger status checks for the HEAD of the
+branch as well as deploy into the <cite>dev</cite> environment</li>
+<li>The developer creates a Pull Request (#1) to merge <cite>myfeature</cite> into the
+<cite>master</cite> branch</li>
+<li>Reviews are made and the developer continues modifying and adding commits to
+the <cite>myfeature</cite> branch</li>
+<li>When reviewers and status checks are positive, the developer will
+<cite>git rebase</cite> on the latest master, then merge the pull request</li>
 </ol>
 <div class="figure" id="id2">
 <img alt="Release to production" src="../_images/gitflow-Page-2.png" />
 <p class="caption"><span class="caption-text">Deployment of master to production through a release branch and tag</span></p>
 </div>
 <ol class="arabic simple" start="6">
-<li>The new <cite>HEAD</cite> of <cite>master</cite> will trigger a new deployment to the <cite>QA</cite> environment</li>
-<li>The new <cite>HEAD</cite> is to be deployed to the <cite>production</cite> environment, the <a class="reference internal" href="../development/software_releases.html#software-releases"><span class="std std-ref">Software Releases</span></a> process of creating a version bump branch is followed</li>
-<li>The version branch is merged back to <cite>master</cite> and the <cite>HEAD</cite> tagged with a release version and triggers a deployment to <cite>production</cite></li>
+<li>The new <cite>HEAD</cite> of <cite>master</cite> will trigger a new deployment to the <cite>QA</cite>
+environment</li>
+<li>The new <cite>HEAD</cite> is to be deployed to the <cite>production</cite> environment, the
+<a class="reference internal" href="../development/software_releases.html#software-releases"><span class="std std-ref">Software Releases</span></a> process of creating a version bump branch is
+followed</li>
+<li>The version branch is merged back to <cite>master</cite> and the <cite>HEAD</cite> tagged with a
+release version and triggers a deployment to <cite>production</cite></li>
 </ol>
 </div>
 </div>

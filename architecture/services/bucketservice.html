@@ -195,39 +195,49 @@
 </div>
 <p><a class="reference external" href="https://github.com/kids-first/kf-api-buckteservice">GitHub Repository</a></p>
 <p>The Bucket Service controls configuration of S3 buckets for new studies.</p>
-<p>It provides a simple REST API in a lambda behind API Gateway that is only available internally to the VPC.</p>
-<p>The primary method of invocation is through creating a new study through the <a class="reference internal" href="../../data/portal_data_flow.html#data-service"><span class="std std-ref">Data Service</span></a>.</p>
+<p>It provides a simple REST API in a lambda behind API Gateway that is only
+available internally to the VPC.</p>
+<p>The primary method of invocation is through creating a new study through the
+<a class="reference internal" href="../../data/portal_data_flow.html#data-service"><span class="std std-ref">Data Service</span></a>.</p>
 <div class="section" id="behavior">
 <h2>Behavior<a class="headerlink" href="#behavior" title="Permalink to this headline">¶</a></h2>
-<p>The Bucket Service will only <em>create</em> new buckets, it will not remove old buckets, even when they are removed within the <a class="reference internal" href="../../data/portal_data_flow.html#data-service"><span class="std std-ref">Data Service</span></a>.
-This is to protect against accidental deletion of data.</p>
+<p>The Bucket Service will only <em>create</em> new buckets, it will not remove old
+buckets, even when they are removed within the <a class="reference internal" href="../../data/portal_data_flow.html#data-service"><span class="std std-ref">Data Service</span></a>. This is to
+protect against accidental deletion of data.</p>
 </div>
 <div class="section" id="bucket-configuration">
 <h2>Bucket Configuration<a class="headerlink" href="#bucket-configuration" title="Permalink to this headline">¶</a></h2>
 <p>A few different settings are applied to a new bucket upon creation.</p>
 <div class="section" id="naming">
 <h3>Naming<a class="headerlink" href="#naming" title="Permalink to this headline">¶</a></h3>
-<p>Study buckets are named in the form <cite>kf-study-{region}-{env}-{kf id}</cite>.
-Here, <cite>kf id</cite> is lowercase and uses a hyphen, <cite>-</cite>, in place of the underscore, <cite>_</cite>, to conform to s3 naming standards.
-The data recovery buckets are named in the form <cite>kf-study-{region}-{env}-{kf id}-dr</cite>.
-Where <cite>region</cite> is a different aws region than the primary study bucket, to ensure regional redundancy.</p>
+<p>Study buckets are named in the form <cite>kf-study-{region}-{env}-{kf id}</cite>. Here,
+<cite>kf id</cite> is lowercase and uses a hyphen, <cite>-</cite>, in place of the underscore, <cite>_</cite>,
+to conform to s3 naming standards. The data recovery buckets are named in the
+form <cite>kf-study-{region}-{env}-{kf id}-dr</cite>. Where <cite>region</cite> is a different aws
+region than the primary study bucket, to ensure regional redundancy.</p>
 </div>
 <div class="section" id="access-logging">
 <h3>Access Logging<a class="headerlink" href="#access-logging" title="Permalink to this headline">¶</a></h3>
-<p>S3 access logging is turned on so that an audit log is available for objects within the new study bucket.</p>
+<p>S3 access logging is turned on so that an audit log is available for objects
+within the new study bucket.</p>
 </div>
 <div class="section" id="encryption">
 <h3>Encryption<a class="headerlink" href="#encryption" title="Permalink to this headline">¶</a></h3>
-<p>Encryption is enabled for the bucket meaning that new objects are encrypted in place for security purposes.</p>
+<p>Encryption is enabled for the bucket meaning that new objects are encrypted in
+place for security purposes.</p>
 </div>
 <div class="section" id="replication">
 <h3>Replication<a class="headerlink" href="#replication" title="Permalink to this headline">¶</a></h3>
-<p>Cross region replication is enabled for the bucket so that a redundant backup is available in case of some region-wide failure of S3.
-The data recovery bucket, suffixed with <cite>-dr</cite>, uses <a class="reference external" href="https://aws.amazon.com/glacier/">Glacier</a> tier storage to reduce costs of the redundency.</p>
+<p>Cross region replication is enabled for the bucket so that a redundant backup
+is available in case of some region-wide failure of S3. The data recovery
+bucket, suffixed with <cite>-dr</cite>, uses <a class="reference external" href="https://aws.amazon.com/glacier/">Glacier</a>
+tier storage to reduce costs of the redundency.</p>
 </div>
 <div class="section" id="versioning">
 <h3>Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h3>
-<p>Object versioning is enabled to allow replication, but also make historical versions of a file available in the case that a file is overwritten with incorrect data.</p>
+<p>Object versioning is enabled to allow replication, but also make historical
+versions of a file available in the case that a file is overwritten with
+incorrect data.</p>
 </div>
 </div>
 </div>

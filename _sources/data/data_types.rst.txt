@@ -1,7 +1,8 @@
 Distributed Data Types
 ======================
 
-The Kids First is responsible for distributing a wide variety of data, in many different formats.
+The Kids First is responsible for distributing a wide variety of data, in many
+different formats.
 
 Genomic Data
 ------------
@@ -10,7 +11,8 @@ Raw Reads - `.fastq`, `.fq`
 +++++++++++++++++++++++++++
 
 `.fastq` and `.fq` are files that contain raw read data from the sequencer.
-These files contain simple ACTG nucleotide sequences and corresponding quality information.
+These files contain simple ACTG nucleotide sequences and corresponding quality
+information.
 
 `Read more about FASTQ <https://en.wikipedia.org/wiki/FASTQ_format>`_
 
@@ -18,7 +20,8 @@ These files contain simple ACTG nucleotide sequences and corresponding quality i
 Aligned Reads - `.bam`, `.cram`
 +++++++++++++++++++++++++++++++
 
-`.bam` and `.cram` are formats that contain sequencer reads that have been aligned with a base genome.
+`.bam` and `.cram` are formats that contain sequencer reads that have been
+aligned with a base genome.
 
 `Read more about BAM <https://samtools.github.io/hts-specs/SAMv1.pdf>`_
 `Read more about CRAM <https://samtools.github.io/hts-specs/CRAMv3.pdf>`_
@@ -26,9 +29,11 @@ Aligned Reads - `.bam`, `.cram`
 Index Files - `.bai`, `.crai`, `.tbi`
 +++++++++++++++++++++++++++++++++++++
 
-Because genomic files can often reach up to several hundred gigabytes per file, they are often accompanied by an index file to reduce seek time.
+Because genomic files can often reach up to several hundred gigabytes per file,
+they are often accompanied by an index file to reduce seek time.
 
-`Read more about Tabix index files <https://samtools.github.io/hts-specs/tabix.pdf>`_
+`Read more about Tabix index files
+<https://samtools.github.io/hts-specs/tabix.pdf>`_
 
 Variant Calls - `.vcf`, `.gvcf`
 +++++++++++++++++++++++++++++++
@@ -36,7 +41,8 @@ Variant Calls - `.vcf`, `.gvcf`
 `.vcf` and `.gvcf` are analyisis upon `.bam` and `.cram` files.
 
 `Read more about VCF <https://samtools.github.io/hts-specs/VCFv4.2.pdf>`_
-`Read more about GVCF <https://software.broadinstitute.org/gatk/documentation/article.php?id=4017>`_
+`Read more about GVCF
+<https://software.broadinstitute.org/gatk/documentation/article.php?id=4017>`_
 
 
 Imaging Data
@@ -45,7 +51,8 @@ Imaging Data
 DICOM
 +++++
 
-Dicom files are a general file format that can hold various types of data, although they will typically contain imagery in the context of Kids First.
+Dicom files are a general file format that can hold various types of data,
+although they will typically contain imagery in the context of Kids First.
 
 `Read more about the DICOM format <https://www.dicomstandard.org/current/>`_
 

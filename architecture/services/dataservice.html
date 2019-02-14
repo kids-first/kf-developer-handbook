@@ -196,16 +196,19 @@
 </div>
 <p><a class="reference external" href="https://github.com/kids-first/kf-api-dataservice">GitHub Repository</a></p>
 <p><a class="reference external" href="http://kf-api-dataservice.kidsfirstdrc.org">Production URL and Swagger Documentation</a></p>
-<p>The Data Service provides a data access layer and defines the primary data model for Kids First data.</p>
+<p>The Data Service provides a data access layer and defines the primary data
+model for Kids First data.</p>
 <div class="section" id="data-access-layer">
 <h2>Data Access Layer<a class="headerlink" href="#data-access-layer" title="Permalink to this headline">¶</a></h2>
-<p>The Data Service exposes an HTTP REST API for interacting with data stored in the Kids First.</p>
+<p>The Data Service exposes an HTTP REST API for interacting with data stored in
+the Kids First.</p>
 </div>
 <div class="section" id="data-model">
 <h2>Data Model<a class="headerlink" href="#data-model" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id1">
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/kids-first/kf-api-dataservice/master/docs/erd.png"><img alt="Data Service" src="https://raw.githubusercontent.com/kids-first/kf-api-dataservice/master/docs/erd.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-text">The Entity Relation Diagram of the Data Service’s data model. Click for full size.</span></p>
+<p class="caption"><span class="caption-text">The Entity Relation Diagram of the Data Service’s data model. Click for full
+size.</span></p>
 </div>
 </div>
 <div class="section" id="internal-design">
@@ -213,10 +216,12 @@
 <div class="figure align-center">
 <img alt="Data Service Internal Design" src="../../_images/dataservice_internal.png" />
 </div>
-<p>The dataservice is a rudimentary <a class="reference external" href="http://flask.pocoo.org/">Flask</a> application that implements a RESTful JSON API.
-It stores most data inside a <a class="reference external" href="https://www.postgresql.org/">PostgreSQL</a> database, with the exception of a few components of the data model.
-These exceptions are fields related to files that are instead deferred to Indexd, which is another internal service used for federating data files.
-The Data Service handles these hybrid interactions internally making them transparent to the end user of the api.</p>
+<p>The dataservice is a rudimentary <a class="reference external" href="http://flask.pocoo.org/">Flask</a> application
+that implements a RESTful JSON API. It stores most data inside a <a class="reference external" href="https://www.postgresql.org/">PostgreSQL</a> database, with the exception of a few
+components of the data model. These exceptions are fields related to files that
+are instead deferred to Indexd, which is another internal service used for
+federating data files. The Data Service handles these hybrid interactions
+internally making them transparent to the end user of the api.</p>
 </div>
 </div>
 

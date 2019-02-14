@@ -181,47 +181,57 @@
             
   <div class="section" id="portal-data-flow">
 <h1>Portal Data Flow<a class="headerlink" href="#portal-data-flow" title="Permalink to this headline">¶</a></h1>
-<p>To understand how data arrives on the portal, it is necessary to understand the different components that data must flow through.</p>
+<p>To understand how data arrives on the portal, it is necessary to understand the
+different components that data must flow through.</p>
 <div class="figure" id="id1">
 <img alt="Data flow to the portal" src="../_images/dataflow.png" />
 <p class="caption"><span class="caption-text">Data flow from source data to the portal</span></p>
 </div>
 <div class="section" id="source-data">
 <h2>Source Data<a class="headerlink" href="#source-data" title="Permalink to this headline">¶</a></h2>
-<p>Data arrives through various methods in various formats.
-Delivery methods are often csv, tsv, spreadsheets, or text either sent through email, or placed in internet accessible storage.</p>
+<p>Data arrives through various methods in various formats. Delivery methods are
+often csv, tsv, spreadsheets, or text either sent through email, or placed in
+internet accessible storage.</p>
 </div>
 <div class="section" id="ingestion">
 <h2>Ingestion<a class="headerlink" href="#ingestion" title="Permalink to this headline">¶</a></h2>
-<p>Source documents contain data that must be extracted into the Data Service’s data model.
-Due to the variable nature of the source data, extraction requires manual evaluation by one familiar with the Data Service’s model.
-Extraction can be performed with the aid of the <a class="reference external" href="https://github.com/kids-first/kf-lib-data-ingest">Data Ingest Library</a>.</p>
+<p>Source documents contain data that must be extracted into the Data Service’s
+data model. Due to the variable nature of the source data, extraction requires
+manual evaluation by one familiar with the Data Service’s model. Extraction can
+be performed with the aid of the <a class="reference external" href="https://github.com/kids-first/kf-lib-data-ingest">Data Ingest Library</a>.</p>
 </div>
 <div class="section" id="data-service">
 <h2>Data Service<a class="headerlink" href="#data-service" title="Permalink to this headline">¶</a></h2>
-<p>The Data Service acts as both the data access layer as well as defines the data model for internal representation of the data.
-It exposes data via an http REST API.</p>
+<p>The Data Service acts as both the data access layer as well as defines the data
+model for internal representation of the data. It exposes data via an http REST
+API.</p>
 </div>
 <div class="section" id="data-release">
 <h2>Data Release<a class="headerlink" href="#data-release" title="Permalink to this headline">¶</a></h2>
-<p>There is a hard limit before data moves on in its lifecycle.
-Progressing further in this pipeline from here will result in the data being made public.</p>
+<p>There is a hard limit before data moves on in its lifecycle. Progressing
+further in this pipeline from here will result in the data being made public.</p>
 <p>Read more about <a class="reference internal" href="data_release.html#data-releases"><span class="std std-ref">Data Releases</span></a></p>
 </div>
 <div class="section" id="portal-etl">
 <h2>Portal ETL<a class="headerlink" href="#portal-etl" title="Permalink to this headline">¶</a></h2>
-<p>The Portal ETL transforms data within the Data Service to a form that is efficient for filtering by the end user and stores it inside Elastic Search.
-The ETL process is highly dependent on the Data Service’s data model and can suffer catastrophic failure when the Data Service’s data model changes in non-compatible ways.</p>
+<p>The Portal ETL transforms data within the Data Service to a form that is
+efficient for filtering by the end user and stores it inside Elastic Search.
+The ETL process is highly dependent on the Data Service’s data model and can
+suffer catastrophic failure when the Data Service’s data model changes in
+non-compatible ways.</p>
 </div>
 <div class="section" id="arranger">
 <h2>Arranger<a class="headerlink" href="#arranger" title="Permalink to this headline">¶</a></h2>
-<p>Arranger as a graphQL API that exposes data within Elastic Search to the portal interface.
-Arranger is highly dependent on the data model within Elastic Search.
-If the shape of Elastic Search indicies change, the Arranger API may cause errors until the data has been re-indexed by the Portal ETL to the correct shape, or Arranger has been configured with the correct shape.</p>
+<p>Arranger as a graphQL API that exposes data within Elastic Search to the portal
+interface. Arranger is highly dependent on the data model within Elastic
+Search. If the shape of Elastic Search indicies change, the Arranger API may
+cause errors until the data has been re-indexed by the Portal ETL to the
+correct shape, or Arranger has been configured with the correct shape.</p>
 </div>
 <div class="section" id="portal">
 <h2>Portal<a class="headerlink" href="#portal" title="Permalink to this headline">¶</a></h2>
-<p>The portal communicates with Arranger to fetch data depending on various filters and search terms that the user has entered.</p>
+<p>The portal communicates with Arranger to fetch data depending on various
+filters and search terms that the user has entered.</p>
 </div>
 </div>
 

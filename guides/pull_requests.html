@@ -180,46 +180,65 @@
             
   <div class="section" id="pull-requests">
 <h1>Pull Requests<a class="headerlink" href="#pull-requests" title="Permalink to this headline">¶</a></h1>
-<p>Pull requests are a useful tool introduced by GitHub to provide feedback and quality assurance on new code before it is accepted into a codebase.</p>
+<p>Pull requests are a useful tool introduced by GitHub to provide feedback and
+quality assurance on new code before it is accepted into a codebase.</p>
 <div class="section" id="opening-a-pull-request">
 <h2>Opening a Pull Request<a class="headerlink" href="#opening-a-pull-request" title="Permalink to this headline">¶</a></h2>
-<p>You’ve cloned a codebase, branched master, made some changes, and now want contribute them back to the codebase.
-To do so, start by pushing the feature branch with the changes to the remote repository, eg <cite>git push origin my-feature</cite>.
-A pull request now may be created on GitHub by following the git message returned from the service in the terminal, through a notification on the repository home page, or the standard method of <a class="reference external" href="https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request">selecting a branch and clicking ‘New pull request’</a>.</p>
+<p>You’ve cloned a codebase, branched master, made some changes, and now want
+contribute them back to the codebase. To do so, start by pushing the feature
+branch with the changes to the remote repository, eg <cite>git push origin
+my-feature</cite>. A pull request now may be created on GitHub by following the git
+message returned from the service in the terminal, through a notification on
+the repository home page, or the standard method of <a class="reference external" href="https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request">selecting a branch and
+clicking ‘New pull request’</a>.</p>
 </div>
 <div class="section" id="choosing-the-base-branch">
 <h2>Choosing the Base Branch<a class="headerlink" href="#choosing-the-base-branch" title="Permalink to this headline">¶</a></h2>
-<p>More often than not, when using our stardard branching strategy (see the <a class="reference internal" href="branches.html#branches"><span class="std std-ref">Branches</span></a> Guide), a pull request will be made against the master branch.
-This indicates the intention to contribute code directly to the active head of the repository.
-However, there may be situtations where that is not desired.
-For example, if <cite>Author A</cite> opens a pull request <cite>PR 1</cite> for branch <cite>feat-1</cite> against the <cite>master</cite> branch, and <cite>Author B</cite> would like to offer contributions to the <cite>feat-1</cite> branch, then <cite>Author B</cite> may branch <cite>feat-1</cite> to <cite>feat-2</cite>, make suggested changes, then create <cite>PR 2</cite> for branch <cite>feat-2</cite> against <cite>feat-1</cite>.
-This would offer <cite>PR 2</cite> as a forum for changes to <cite>PR 1</cite>, which, once a consensus is reached, would be merged into <cite>PR 1</cite> and presumably then merged into the <cite>master</cite> branch.</p>
+<p>More often than not, when using our stardard branching strategy (see the
+<a class="reference internal" href="branches.html#branches"><span class="std std-ref">Branches</span></a> Guide), a pull request will be made against the master branch.
+This indicates the intention to contribute code directly to the active head of
+the repository. However, there may be situtations where that is not desired.
+For example, if <cite>Author A</cite> opens a pull request <cite>PR 1</cite> for branch <cite>feat-1</cite>
+against the <cite>master</cite> branch, and <cite>Author B</cite> would like to offer contributions
+to the <cite>feat-1</cite> branch, then <cite>Author B</cite> may branch <cite>feat-1</cite> to <cite>feat-2</cite>, make
+suggested changes, then create <cite>PR 2</cite> for branch <cite>feat-2</cite> against <cite>feat-1</cite>.
+This would offer <cite>PR 2</cite> as a forum for changes to <cite>PR 1</cite>, which, once a
+consensus is reached, would be merged into <cite>PR 1</cite> and presumably then merged
+into the <cite>master</cite> branch.</p>
 </div>
 <div class="section" id="pull-request-descriptions">
 <h2>Pull Request Descriptions<a class="headerlink" href="#pull-request-descriptions" title="Permalink to this headline">¶</a></h2>
-<p>Pull requests should contain summary descriptions which outline the changes and intents of the contribution.
-If the pull Request is closing a GitHub issue, make sure to mention the issue in the description, eg: <cite>Closes #123</cite>.
-See <a class="reference external" href="https://help.github.com/articles/closing-issues-using-keywords">Closing issues using keywords</a> for more information on this feature.</p>
+<p>Pull requests should contain summary descriptions which outline the changes and
+intents of the contribution. If the pull Request is closing a GitHub issue,
+make sure to mention the issue in the description, eg: <cite>Closes #123</cite>. See
+<a class="reference external" href="https://help.github.com/articles/closing-issues-using-keywords">Closing issues using keywords</a> for more
+information on this feature.</p>
 <div class="figure align-center" id="id1" style="width: 70%">
 <a class="reference internal image-reference" href="../_images/proper_pr_sidebar.png"><img alt="Pull Request sidebar" src="../_images/proper_pr_sidebar.png" style="width: 70%;" /></a>
-<p class="caption"><span class="caption-text">Sidebar of a Pull Request in GitHub displaying completed Reviewers, Assignees, and Labels fields</span></p>
+<p class="caption"><span class="caption-text">Sidebar of a Pull Request in GitHub displaying completed Reviewers,
+Assignees, and Labels fields</span></p>
 </div>
 </div>
 <div class="section" id="reviewers">
 <h2>Reviewers<a class="headerlink" href="#reviewers" title="Permalink to this headline">¶</a></h2>
-<p>Reviewers should be requested for feedback on a pull request.
-According to the <span class="xref std std-ref">Anatomy of a Repository</span>, there should be a status check in place for all repositories that requires at least one reviewer to give an approval to the pull request.</p>
+<p>Reviewers should be requested for feedback on a pull request. According to the
+<span class="xref std std-ref">Anatomy of a Repository</span>, there should be a status check in place for all
+repositories that requires at least one reviewer to give an approval to the
+pull request.</p>
 </div>
 <div class="section" id="assignees">
 <h2>Assignees<a class="headerlink" href="#assignees" title="Permalink to this headline">¶</a></h2>
-<p>If a contribution has a definitive author or authors, it is good to keep track of them through the <cite>Assignees</cite> option.</p>
+<p>If a contribution has a definitive author or authors, it is good to keep track
+of them through the <cite>Assignees</cite> option.</p>
 </div>
 <div class="section" id="labels">
 <h2>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">¶</a></h2>
-<p>Labels are useful for categorizing a pull request or issues.
-It is helpful for distilling open pull requests or summarizing changes in releases.</p>
-<p>Reviews are required from at least one other developer for pull requests against <cite>master</cite>.
-If a feature introduced by a pull request potentially impacts other applications or developers, those stakeholders should also be requested for review and provide their consent via an approval.</p>
+<p>Labels are useful for categorizing a pull request or issues. It is helpful for
+distilling open pull requests or summarizing changes in releases.</p>
+<p>Reviews are required from at least one other developer for pull requests
+against <cite>master</cite>. If a feature introduced by a pull request potentially impacts
+other applications or developers, those stakeholders should also be requested
+for review and provide their consent via an approval.</p>
 <p><a class="reference external" href="https://help.github.com/articles/about-pull-request-reviews/">About pull request reviews</a></p>
 </div>
 </div>

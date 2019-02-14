@@ -201,28 +201,41 @@
 </div>
 <div class="section" id="use-within-applications">
 <h2>Use Within Applications<a class="headerlink" href="#use-within-applications" title="Permalink to this headline">¶</a></h2>
-<p>Front facing applications such as the portal or release coordinator UI interact with Ego to obtain a token that may be used to authenticate with other services.
-In the above example, the portal has a short exchange with Ego wherein an Ego token is aquired.
-From there, the portal will store the token then use it to verify the current user has been authenticated when talking with other services.</p>
-<p>Services that recieve these requests containing the user’s token will verify that the token was indeed minted by Ego by either passing the token back to Ego for verification, or verifying that it has been signed by Ego by using Ego’s public key.</p>
+<p>Front facing applications such as the portal or release coordinator UI interact
+with Ego to obtain a token that may be used to authenticate with other
+services. In the above example, the portal has a short exchange with Ego
+wherein an Ego token is aquired. From there, the portal will store the token
+then use it to verify the current user has been authenticated when talking with
+other services.</p>
+<p>Services that recieve these requests containing the user’s token will verify
+that the token was indeed minted by Ego by either passing the token back to Ego
+for verification, or verifying that it has been signed by Ego by using Ego’s
+public key.</p>
 </div>
 <div class="section" id="social-authentication">
 <h2>Social Authentication<a class="headerlink" href="#social-authentication" title="Permalink to this headline">¶</a></h2>
-<p>Ego allows users to authenticate and register through various single sign-on providers (SSO) such as Google, Facebook, and LinkedIn.
-When a user authenticates with one of these providers using the OAuth2 flow, an access token is returned to the user which is then sent to Ego.
-Ego will register this user, if they have never been seen before, and issue its own token to the user to include with all future requests.</p>
+<p>Ego allows users to authenticate and register through various single sign-on
+providers (SSO) such as Google, Facebook, and LinkedIn. When a user
+authenticates with one of these providers using the OAuth2 flow, an access
+token is returned to the user which is then sent to Ego. Ego will register this
+user, if they have never been seen before, and issue its own token to the user
+to include with all future requests.</p>
 </div>
 <div class="section" id="roles">
 <h2>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h2>
-<p>There are currently only two roles that are used in Ego: <code class="docutils literal notranslate"><span class="pre">user</span></code> and <code class="docutils literal notranslate"><span class="pre">admin</span></code>.</p>
+<p>There are currently only two roles that are used in Ego: <code class="docutils literal notranslate"><span class="pre">user</span></code> and
+<code class="docutils literal notranslate"><span class="pre">admin</span></code>.</p>
 </div>
 <div class="section" id="groups">
 <h2>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">¶</a></h2>
-<p>Groups add another level to user permissions inside Ego, although they are currently only used to differentiate internal users from others for analytical purposes.</p>
+<p>Groups add another level to user permissions inside Ego, although they are
+currently only used to differentiate internal users from others for analytical
+purposes.</p>
 </div>
 <div class="section" id="services">
 <h2>Services<a class="headerlink" href="#services" title="Permalink to this headline">¶</a></h2>
-<p>Services may also be registered via Ego so that they may be authenticated by other services.</p>
+<p>Services may also be registered via Ego so that they may be authenticated by
+other services.</p>
 </div>
 </div>
 
