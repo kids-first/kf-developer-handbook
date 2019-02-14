@@ -20,16 +20,16 @@ Choosing the Base Branch
 ------------------------
 
 More often than not, when using our stardard branching strategy (see the
-:ref:`Branches` Guide), a pull request will be made against the master branch.
-This indicates the intention to contribute code directly to the active head of
-the repository. However, there may be situtations where that is not desired.
-For example, if `Author A` opens a pull request `PR 1` for branch `feat-1`
-against the `master` branch, and `Author B` would like to offer contributions
-to the `feat-1` branch, then `Author B` may branch `feat-1` to `feat-2`, make
-suggested changes, then create `PR 2` for branch `feat-2` against `feat-1`.
-This would offer `PR 2` as a forum for changes to `PR 1`, which, once a
-consensus is reached, would be merged into `PR 1` and presumably then merged
-into the `master` branch.
+:ref:`guides/branches:Branches` Guide), a pull request will be made against
+the master branch. This indicates the intention to contribute code directly to
+the active head of the repository. However, there may be situtations where
+that is not desired.  For example, if `Author A` opens a pull request `PR 1`
+for branch `feat-1` against the `master` branch, and `Author B` would like to
+offer contributions to the `feat-1` branch, then `Author B` may branch
+`feat-1` to `feat-2`, make suggested changes, then create `PR 2` for branch
+`feat-2` against `feat-1`.  This would offer `PR 2` as a forum for changes
+to `PR 1`, which, once a consensus is reached, would be merged into `PR 1`
+and presumably then merged into the `master` branch.
 
 Pull Request Descriptions
 -------------------------
@@ -54,9 +54,9 @@ Reviewers
 ---------
 
 Reviewers should be requested for feedback on a pull request. According to the
-:ref:`Anatomy of a Repository`, there should be a status check in place for all
-repositories that requires at least one reviewer to give an approval to the
-pull request.
+:ref:`development/repositories:The Anatomy of a Repository`, there should be a
+status check in place for all repositories that requires at least one reviewer
+to give an approval to the pull request.
 
 Assignees
 ---------

@@ -43,4 +43,4 @@ Production - prd
 
 Production has the latest released software versions and is open to the
 internet. Codebases require rigorous approvals before reaching this stage, as
-outlined in :ref:`The Feature Lifecycle`.
+outlined in :ref:`development/feature_lifecycle:The Feature Lifecycle`.
