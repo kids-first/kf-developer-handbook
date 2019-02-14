@@ -10,7 +10,7 @@ jobs:
           command: |
             pip install -r requirements.txt
             doc8 docs
-            sphinx-build docs staged
+            sphinx-build -W docs staged
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 touch staged/.nojekyll
                 git config --global user.email "dankolbman@gmail.com"
