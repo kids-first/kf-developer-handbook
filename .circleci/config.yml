@@ -1,31 +1,25 @@
 version: 2
 jobs:
   build:
-    branches:
-      only:
-        - master
     docker:
       - image: python:3
     steps:
+      - checkout
       - run:
-          name: Build docs
-          working_directory: ~/workdir
+          name: Test and deploy if master
           command: |
-            git clone https://${GITHUB_TOKEN}@github.com/kids-first/kf-developer-handbook.git
-            cd kf-developer-handbook
             pip install -r requirements.txt
+            doc8 docs
             sphinx-build docs staged
-            touch staged/.nojekyll
-      - deploy:
-          name: Deploy docs to gh-pages branch
-          working_directory: ~/workdir/kf-developer-handbook
-          command: |
-            git config --global user.email "dankolbman@gmail.com"
-            git config --global user.name "Dan Kolbman"
-            git checkout gh-pages
-            git pull origin gh-pages
-            cp -r staged/* ./
-            rm -r staged
-            git add -A .
-            git commit --allow-empty -m ":recycle: Update docs site"
-            git push -q https://${GITHUB_TOKEN}@github.com/kids-first/kf-developer-handbook.git
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                touch staged/.nojekyll
+                git config --global user.email "dankolbman@gmail.com"
+                git config --global user.name "Dan Kolbman"
+                git checkout gh-pages
+                git pull origin gh-pages
+                cp -r staged/* ./
+                rm -r staged
+                git add -A .
+                git commit --allow-empty -m ":recycle: Update docs site"
+                git push -q https://${GITHUB_TOKEN}@github.com/kids-first/kf-developer-handbook.git
+            fi

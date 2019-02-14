@@ -7,14 +7,17 @@ Data Service
 
 `GitHub Repository <https://github.com/kids-first/kf-api-dataservice>`_
 
-`Production URL and Swagger Documentation <http://kf-api-dataservice.kidsfirstdrc.org>`_
+`Production URL and Swagger Documentation
+<http://kf-api-dataservice.kidsfirstdrc.org>`_
 
-The Data Service provides a data access layer and defines the primary data model for Kids First data.
+The Data Service provides a data access layer and defines the primary data
+model for Kids First data.
 
 Data Access Layer
 -----------------
 
-The Data Service exposes an HTTP REST API for interacting with data stored in the Kids First.
+The Data Service exposes an HTTP REST API for interacting with data stored in
+the Kids First.
 
 Data Model
 ----------
@@ -25,7 +28,8 @@ Data Model
    :align: center
    :height: 300px
 
-   The Entity Relation Diagram of the Data Service's data model. Click for full size.
+   The Entity Relation Diagram of the Data Service's data model. Click for full
+   size.
 
 
 Internal Design
@@ -35,7 +39,10 @@ Internal Design
    :alt: Data Service Internal Design
    :align: center
 
-The dataservice is a rudimentary `Flask <http://flask.pocoo.org/>`_ application that implements a RESTful JSON API.
-It stores most data inside a `PostgreSQL <https://www.postgresql.org/>`_ database, with the exception of a few components of the data model.
-These exceptions are fields related to files that are instead deferred to Indexd, which is another internal service used for federating data files.
-The Data Service handles these hybrid interactions internally making them transparent to the end user of the api.
+The dataservice is a rudimentary `Flask <http://flask.pocoo.org/>`_ application
+that implements a RESTful JSON API. It stores most data inside a `PostgreSQL
+<https://www.postgresql.org/>`_ database, with the exception of a few
+components of the data model. These exceptions are fields related to files that
+are instead deferred to Indexd, which is another internal service used for
+federating data files. The Data Service handles these hybrid interactions
+internally making them transparent to the end user of the api.
