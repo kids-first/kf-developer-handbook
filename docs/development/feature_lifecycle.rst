@@ -13,7 +13,8 @@ Development
 
 Any Kids First codebase should provide some information to get started within
 the README of the GitHub repository. Assuming that the repository follows the
-standard practices as outlined in :ref:`The Anatomy of a Repository` , the
+standard practices as outlined in
+:ref:`development/repositories:The Anatomy of a Repository` , the
 README should clearly define any requirements and where to get them, how to run
 the application in a local development environment, and how to run tests to
 ensure functionality. If the application is complex and requires other services
@@ -26,7 +27,7 @@ Branching
 
 A new branch is created from `master` to start accepting new commits.
 
-Read more in the :ref:`Branches` Guide
+Read more in the :ref:`guides/branches:Branches` Guide
 
 Commiting Changes
 =================
@@ -34,7 +35,7 @@ Commiting Changes
 Code changes are added through commits to a new feature branch forked from
 `master`.
 
-Read more in :ref:`Commit Messages` Guide
+Read more in :ref:`guides/commit_messages:Commit Messages` Guide
 
 Creating a Pull Request
 =======================
@@ -44,14 +45,15 @@ the code base. Opening of a new pull request may signify that changes are ready
 for review, or that the author wishes to give visibility into their current
 status.
 
-Read more in the :ref:`Pull Requests` Guide
+Read more in the :ref:`guides/pull_requests:Pull Requests` Guide
 
 Status Checks
 =============
 
 Status checks will be initiated automatically upon commiting to a branch. Some
 status checks will be required, while others may not be, depending on the
-decisions made by the mantainers of the repository. See :ref:`Status Checks`
+decisions made by the mantainers of the repository. See
+:ref:`development/feature_lifecycle:Status Checks`
 for some of the different checks in use. A pull request may only be merged if
 it has passed the required status checks.
 
@@ -64,7 +66,7 @@ satisfactory and meet standards. Once the pull request has recieved the
 necessary positive reviews and has successful status checks, the branch is
 ready to merge.
 
-Read more in the :ref:`Pull Requests` Guide
+Read more in the :ref:`guides/pull_requests:Pull Requests` Guide
 
 The Merge
 =========
@@ -92,4 +94,4 @@ A release is tagged directly on the `master` branch of the repository. This
 will trigger a deployment of the codebase at that commit to production and the
 general public.
 
-Read more about :ref:`Software Releases`
+Read more about :ref:`development/software_releases:Software Releases`

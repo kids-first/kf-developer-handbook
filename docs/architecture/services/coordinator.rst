@@ -12,7 +12,7 @@ Release Coordinator
 `Swagger Documentation <http://kf-release-coord.kidsfirstdrc.org/redoc/>`_
 
 The Release Coordinator provides orchestration between services and people to
-produce :ref:`Data Releases`.
+produce :ref:`data/data_release:Data Releases`.
 
 Internal Design
 ---------------
