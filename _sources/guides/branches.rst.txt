@@ -40,8 +40,8 @@ Example
 6. The new `HEAD` of `master` will trigger a new deployment to the `QA`
    environment
 7. The new `HEAD` is to be deployed to the `production` environment, the
-   :ref:`Software Releases` process of creating a version bump branch is
-   followed
+   :ref:`development/software_releases:Software Releases` process of creating
+   a version bump branch is followed
 8. The version branch is merged back to `master` and the `HEAD` tagged with a
    release version and triggers a deployment to `production`
 

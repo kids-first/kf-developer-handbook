@@ -13,14 +13,15 @@ It provides a simple REST API in a lambda behind API Gateway that is only
 available internally to the VPC.
 
 The primary method of invocation is through creating a new study through the
-:ref:`Data Service`.
+:ref:`architecture/services/dataservice:Data Service`.
 
 Behavior
 --------
 
 The Bucket Service will only *create* new buckets, it will not remove old
-buckets, even when they are removed within the :ref:`Data Service`. This is to
-protect against accidental deletion of data.
+buckets, even when they are removed within the
+:ref:`architecture/services/dataservice:Data Service`. This is to protect
+against accidental deletion of data.
 
 Bucket Configuration
 --------------------
