@@ -4,9 +4,9 @@ Data Spills
 A data spill is the accidental or deliberate exposure of information into an
 uncontrolled or unauthorised environment, or to persons without a need-to-know.
 
-There are many examples of data spills, but for the purposes of this guide, we will focus
-on the exposure of sensitive clinical research data in a public GitHub repository
-and what to do if this happens.
+There are many examples of data spills, but for the purposes of this guide,
+we will focus on the exposure of sensitive clinical research data in a public
+GitHub repository and what to do if this happens.
 
 What is Sensitive Data?
 -----------------------
@@ -31,7 +31,8 @@ Examples of Kids First sensitive data include but are not limited to:
 What is NOT Sensitive Data?
 ---------------------------
 
-Any Kids First clinical research data that has been approved by the Kids First DCC for public release
+Any Kids First clinical research data that has been approved by the Kids First
+DCC for public release
 
 Identifiers (non-PHI of course) such as Kids First IDs (i.e. PT_00001111),
 IDs in the raw clinical data provided by Kids First researchers
