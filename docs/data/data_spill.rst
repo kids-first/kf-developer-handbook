@@ -114,6 +114,11 @@ Checklist
 
         Thank you very much in advance!
 
+5. **Backup Your Repository**
+
+    If you haven't done this already, backup your repository. Note that
+    this is only for backup/archival purposes. You won't be using this version
+    of the repository in the future.
 
 5. **Clean up Repository History**
 
