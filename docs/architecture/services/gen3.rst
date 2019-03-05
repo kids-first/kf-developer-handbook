@@ -7,7 +7,7 @@ First.
 Indexd
 ------
 
-The indexd service catelogs files in Kids First. This includes tracking
+The indexd service catalogs files in Kids First. This includes tracking
 information about file name, size, hash, storage location, and access controls.
 The :ref:`architecture/services/dataservice:Data Service` interacts with
 indexd to register files in coordination with its own internal model.

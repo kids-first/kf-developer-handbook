@@ -1,7 +1,7 @@
 Micro Services
 ==============
 
-Kids First uses a `Microserivces
+Kids First uses a `Microservices
 <https://microservices.io/patterns/microservices.html>`_ pattern when
 developing applications. This allows quick and decoupled development and
 deployment process at the cost of more complicated design.
@@ -13,7 +13,7 @@ A handful of canned application types have been defined to allow for easier
 bootstrapping of new services. These application types are defined through
 `Terraform <https://www.terraform.io/>`_ configuration files, describing the
 infrastructure, and a `Jenkins Pipeline
-<https://jenkins.io/doc/book/pipeline/>`_ describing the continous delivery
+<https://jenkins.io/doc/book/pipeline/>`_ describing the continuous delivery
 process of the code base.
 
 

@@ -7,9 +7,9 @@ state of different branches, and reduce the number of often over-aged pull
 requests that need to be merged.
 
 Kids First uses `GitHub flow <https://guides.github.com/introduction/flow/>`_
-for its repositories whith release tags being made directly on `master`.
+for its repositories which release tags being made directly on `master`.
 Branches ready for merge in a Pull Request are required to rebase on the latest
-master to ensure compatability. Rebases are **required** over merges from
+master to ensure compatibility. Rebases are **required** over merges from
 master into the feature branch (easily done through the GitHub interface) to
 avoid commit histories full of updates from master.
 
@@ -44,4 +44,3 @@ Example
    a version bump branch is followed
 8. The version branch is merged back to `master` and the `HEAD` tagged with a
    release version and triggers a deployment to `production`
-

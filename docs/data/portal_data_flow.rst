@@ -54,7 +54,7 @@ Arranger
 
 Arranger as a graphQL API that exposes data within Elastic Search to the portal
 interface. Arranger is highly dependent on the data model within Elastic
-Search. If the shape of Elastic Search indicies change, the Arranger API may
+Search. If the shape of Elastic Search indices change, the Arranger API may
 cause errors until the data has been re-indexed by the Portal ETL to the
 correct shape, or Arranger has been configured with the correct shape.
 

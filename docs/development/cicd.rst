@@ -44,7 +44,7 @@ qa
 --
 
 The QA environment provides a mostly-stable environment where new features may
-be used, evaluated, and tested before being released. This is is where
+be used, evaluated, and tested before being released. This is where
 integration test-suites may be run to ensure that all services cooperate
 nicely. The data in QA should also be close to production quality to fully flex
 all features. New features enter QA after merging a feature branch into the
