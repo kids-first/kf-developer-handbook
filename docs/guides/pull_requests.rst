@@ -19,7 +19,7 @@ clicking 'New pull request'
 Choosing the Base Branch
 ------------------------
 
-More often than not, when using our stardard branching strategy (see the
+More often than not, when using our standard branching strategy (see the
 :ref:`guides/branches:Branches` Guide), a pull request will be made against
 the master branch. This indicates the intention to contribute code directly to
 the active head of the repository. However, there may be situtations where

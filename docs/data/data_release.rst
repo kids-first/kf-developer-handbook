@@ -17,7 +17,7 @@ Initiating a Release
 When new data has been added and finalized in the Data Service, and is now
 wanted for display on the portal, a new release should be initiated. This is
 done on a study basis, with the possibility to include many or all studies in a
-release. After selecting candidiate studies for the release within the Release
+release. After selecting candidate studies for the release within the Release
 Coordinator, the release may be started by staging the the new data.
 
 Staging

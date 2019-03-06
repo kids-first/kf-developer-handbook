@@ -29,7 +29,7 @@ Here are more detailed how-tos using some of these commands with examples:
  - `Interactive Staging <https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging>`_
 
 We require commits to be prefixed with a single emoji that appropriately
-summarizes the the gist of the commit. This is helpful in allowing one to scan
+summarizes the gist of the commit. This is helpful in allowing one to scan
 through the commit log visually inside of Github or be able to perform summary
 analysis inside of release notes or when analyzing git activity as a whole.
 When adding an emoji to the commit message, use the colon-ated version as

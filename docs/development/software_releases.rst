@@ -40,7 +40,7 @@ To author a release, follow the steps outlined in `Release Maker
 
 These are:
 
-1. checkout a new branch from master in the repository nameb `release-x.y.z`
+1. checkout a new branch from master in the repository named `release-x.y.z`
    using SemVer versioning
 2. Update existing version numbers in the code to the new version number
 3. Generate the `CHANGELOG` string using `release` from the
