@@ -48,3 +48,10 @@ Developer Handbook
    guides/pull_requests
    guides/python
    guides/javascript
+
+.. toctree::
+    :caption: Other Kids First Docs
+
+    Airflow <https://kids-first.github.io/kf-airflow-dags>
+    Ingestion Library <https://kids-first.github.io/kf-lib-data-ingest>
+    Study Creator API <https://kids-first.github.io/kf-api-study-creator>
