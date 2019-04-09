@@ -6,7 +6,7 @@
 Developer Handbook
 ==================
 
-.. image:: _static/images/logo.png
+.. image:: _static/images/logo.svg
    :alt: Kids First Developer Handbook
 
 .. toctree::
