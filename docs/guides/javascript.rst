@@ -35,11 +35,11 @@ Most repositories will check for conformance using a
 Package Management
 ------------------
 
-Kids First uses either `npm` or `yarn` for reliable and secure dependency
-management of its JavaScript projects.
-All projects should include a `package.json` file for easy installation.
-`package-lock.json` also needs to be included to facilitate greater visibility
-of tree changes through readable source control differences.
+Kids First uses ``yarn`` for reliable and secure dependency management of its
+JavaScript projects.
+All projects should include a ``package.json`` file for easy installation.
+``yarn.lock`` also needs to be included to facilitate greater
+visibility of tree changes through readable source control differences.
 
 Testing
 -------
@@ -49,3 +49,19 @@ performs as designed.
 Any unit testing framworks such as
 `mocha <https://www.npmjs.com/package/mocha>`_ or the equivalent should run
 tests stored in an appropriate directory.
+
+Prettier
+--------
+
+Prettier should be used to provide consistent formatting across the project.
+The following is the settings used for prettier that should be stored in
+`prettier.config.js` in the root of the project directory:
+
+.. code-block:: js
+
+    module.exports = {
+      printWidth: 80,
+      singleQuote: true,
+      trailingComma: 'all',
+      bracketSpacing: false,
+    };
