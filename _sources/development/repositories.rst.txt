@@ -20,7 +20,7 @@ Header Preamble
 Name
 ----
 
-All repositories are namespaced with the organization prefx, *kf*.
+All repositories are namespaced with the organization prefix, *kf*.
 Most also include sub-spaces, such as: *api*, *task*, and *ui*.
 
 Description
@@ -60,7 +60,7 @@ Required Files
 .gitignore
 ----------
 
-An appropriate ``.gitignore`` is important to prevent against commiting of
+An appropriate ``.gitignore`` is important to prevent against committing of
 files that do not need to be tracked. This file's contents will be determined
 by the codebase. There are are a number of precompiled ``.gitignore`` files
 available on `GitHub <https://github.com/github/gitignore>`_ for easy
@@ -152,7 +152,7 @@ CircleCI
 --------
 
 CircleCI can be used to run automated testing such as linting checks for style
-and unit tests for functionality. It is a good idea to reqiure CircleCI for at
+and unit tests for functionality. It is a good idea to require CircleCI for at
 least one of these checks.
 
 Jenkins

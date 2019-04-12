@@ -92,7 +92,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">The Feature Lifecycle</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#development">Development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#branching">Branching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#commiting-changes">Commiting Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#committing-changes">Committing Changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creating-a-pull-request">Creating a Pull Request</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#status-checks">Status Checks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pull-request-reviews">Pull Request Reviews</a></li>
@@ -122,6 +122,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/commit_messages.html">Commit Messages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/pull_requests.html">Pull Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/python.html">Guidelines for Python Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/javascript.html">Guidelines for JavaScript Projects</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other Kids First Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://kids-first.github.io/kf-airflow-dags">Airflow</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://kids-first.github.io/kf-lib-data-ingest">Ingestion Library</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://kids-first.github.io/kf-api-study-creator">Study Creator API</a></li>
 </ul>
 
             
@@ -189,8 +196,8 @@
   <div class="section" id="the-feature-lifecycle">
 <h1>The Feature Lifecycle<a class="headerlink" href="#the-feature-lifecycle" title="Permalink to this headline">¶</a></h1>
 <p>Contributing code is an obvious necessity in progressing any software project.
-However, there is and endless amount of ways to do so. By standardizing the
-process and documenting it thorougly, we hope to make contributing code to any
+However, there is an endless amount of ways to do so. By standardizing the
+process and documenting it thoroughly, we hope to make contributing code to any
 Kids First repository a consistent and straightforward experience. Following is
 the sequentially organized steps to contribute code to any Kids First codebase.</p>
 <div class="section" id="development">
@@ -211,8 +218,8 @@ and testing.</p>
 <p>A new branch is created from <cite>master</cite> to start accepting new commits.</p>
 <p>Read more in the <a class="reference internal" href="../guides/branches.html#branches"><span class="std std-ref">Branches</span></a> Guide</p>
 </div>
-<div class="section" id="commiting-changes">
-<h2>Commiting Changes<a class="headerlink" href="#commiting-changes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="committing-changes">
+<h2>Committing Changes<a class="headerlink" href="#committing-changes" title="Permalink to this headline">¶</a></h2>
 <p>Code changes are added through commits to a new feature branch forked from
 <cite>master</cite>.</p>
 <p>Read more in <a class="reference internal" href="../guides/commit_messages.html#commit-messages"><span class="std std-ref">Commit Messages</span></a> Guide</p>
@@ -227,18 +234,18 @@ status.</p>
 </div>
 <div class="section" id="status-checks">
 <h2>Status Checks<a class="headerlink" href="#status-checks" title="Permalink to this headline">¶</a></h2>
-<p>Status checks will be initiated automatically upon commiting to a branch. Some
+<p>Status checks will be initiated automatically upon committing to a branch. Some
 status checks will be required, while others may not be, depending on the
-decisions made by the mantainers of the repository. See
+decisions made by the maintainers of the repository. See
 <a class="reference internal" href="#status-checks"><span class="std std-ref">Status Checks</span></a>
 for some of the different checks in use. A pull request may only be merged if
 it has passed the required status checks.</p>
 </div>
 <div class="section" id="pull-request-reviews">
 <h2>Pull Request Reviews<a class="headerlink" href="#pull-request-reviews" title="Permalink to this headline">¶</a></h2>
-<p>Reviews will be performed by at least on developer for a pull request. The
+<p>Reviews will be performed by at least one developer for a pull request. The
 feature developer will work with the reviewer(s) until the changes are
-satisfactory and meet standards. Once the pull request has recieved the
+satisfactory and meet standards. Once the pull request has received the
 necessary positive reviews and has successful status checks, the branch is
 ready to merge.</p>
 <p>Read more in the <a class="reference internal" href="../guides/pull_requests.html#pull-requests"><span class="std std-ref">Pull Requests</span></a> Guide</p>
@@ -249,14 +256,14 @@ ready to merge.</p>
 <cite>master</cite>. The branch owner should first check that a branch is up to date with
 <cite>master</cite> and perform a rebase if necessary. Merging <cite>master</cite> back into the
 feature branch via the GitHub UI <strong>should not be done</strong> so as to avoid
-pontentially many merge commits in the repository’s history. When a branch has
+potentially many merge commits in the repository’s history. When a branch has
 been updated, it is the responsibility of the branch owner to merge the branch
 into <cite>master</cite>.</p>
 </div>
 <div class="section" id="qa-deployment">
 <h2>QA Deployment<a class="headerlink" href="#qa-deployment" title="Permalink to this headline">¶</a></h2>
 <p>At this stage, the new feature will be in the <cite>master</cite> branch of the codebase
-and should have been deployed into the QA enviornment, making it available
+and should have been deployed into the QA environment, making it available
 internally. This provides time to discover any extraneous bugs or integration
 issues before it is released.</p>
 </div>

@@ -130,6 +130,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../guides/commit_messages.html">Commit Messages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/pull_requests.html">Pull Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/python.html">Guidelines for Python Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/javascript.html">Guidelines for JavaScript Projects</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other Kids First Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://kids-first.github.io/kf-airflow-dags">Airflow</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://kids-first.github.io/kf-lib-data-ingest">Ingestion Library</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://kids-first.github.io/kf-api-study-creator">Study Creator API</a></li>
 </ul>
 
             
@@ -209,10 +216,10 @@
 <p>Front facing applications such as the portal or release coordinator UI interact
 with Ego to obtain a token that may be used to authenticate with other
 services. In the above example, the portal has a short exchange with Ego
-wherein an Ego token is aquired. From there, the portal will store the token
+wherein an Ego token is acquired. From there, the portal will store the token
 then use it to verify the current user has been authenticated when talking with
 other services.</p>
-<p>Services that recieve these requests containing the user’s token will verify
+<p>Services that receive these requests containing the user’s token will verify
 that the token was indeed minted by Ego by either passing the token back to Ego
 for verification, or verifying that it has been signed by Ego by using Ego’s
 public key.</p>

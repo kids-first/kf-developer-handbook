@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Branches &mdash; Kids First Developer Handbook  documentation</title>
+  <title>Guidelines for JavaScript Projects &mdash; Kids First Developer Handbook  documentation</title>
   
 
   
@@ -37,8 +37,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Commit Messages" href="commit_messages.html" />
-    <link rel="prev" title="Gen3" href="../architecture/services/gen3.html" />
+    <link rel="prev" title="Guidelines for Python Projects" href="python.html" />
     <link rel="stylesheet" href="https://kids-first.github.io/kf-sphinx-docs-theme/sphinx_kidsfirst_theme/static/css/kidsfirst.css" type="text/css" />
  
 </head>
@@ -107,14 +106,19 @@
 </ul>
 <p class="caption"><span class="caption-text">Guides</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Branches</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="branches.html">Branches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="commit_messages.html">Commit Messages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pull_requests.html">Pull Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Guidelines for Python Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="javascript.html">Guidelines for JavaScript Projects</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Guidelines for JavaScript Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#version">Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transpile">Transpile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-standards">Code Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#package-management">Package Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prettier">Prettier</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Other Kids First Docs</span></p>
 <ul>
@@ -166,13 +170,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Branches</li>
+      <li>Guidelines for JavaScript Projects</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/guides/branches.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/guides/javascript.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -185,49 +189,64 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="branches">
-<h1>Branches<a class="headerlink" href="#branches" title="Permalink to this headline">¶</a></h1>
-<p>The branching strategy in Kids First repositories is kept simple to reduce the
-amount of contextual awareness needed to keep branches in sync, understand the
-state of different branches, and reduce the number of often over-aged pull
-requests that need to be merged.</p>
-<p>Kids First uses <a class="reference external" href="https://guides.github.com/introduction/flow/">GitHub flow</a>
-for its repositories which release tags being made directly on <cite>master</cite>.
-Branches ready for merge in a Pull Request are required to rebase on the latest
-master to ensure compatibility. Rebases are <strong>required</strong> over merges from
-master into the feature branch (easily done through the GitHub interface) to
-avoid commit histories full of updates from master.</p>
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<div class="figure" id="id1">
-<img alt="Feature branch" src="../_images/gitflow-Page-1.png" />
-<p class="caption"><span class="caption-text">Development of a new feature on a feature branch</span></p>
+  <div class="section" id="guidelines-for-javascript-projects">
+<h1>Guidelines for JavaScript Projects<a class="headerlink" href="#guidelines-for-javascript-projects" title="Permalink to this headline">¶</a></h1>
+<p>Described here are best practices for structuring a JavaScript project within
+Kids First.</p>
+<div class="section" id="version">
+<h2>Version<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h2>
+<p>Any Node.js releases former than 8.0.0 are becoming increasingly deprecated,
+only Node.js 8.0.0 and later should be used for Kids First projects.
+For the release and maintenance schedule, see <a class="reference external" href="https://github.com/nodejs/Release">here</a>.</p>
 </div>
-<ol class="arabic simple">
-<li>A developer begins work on a new feature by making commits to a new
-<cite>myfeature</cite> branch</li>
-<li>Each commit pushed to GitHub will trigger status checks for the HEAD of the
-branch as well as deploy into the <cite>dev</cite> environment</li>
-<li>The developer creates a Pull Request (#1) to merge <cite>myfeature</cite> into the
-<cite>master</cite> branch</li>
-<li>Reviews are made and the developer continues modifying and adding commits to
-the <cite>myfeature</cite> branch</li>
-<li>When reviewers and status checks are positive, the developer will
-<cite>git rebase</cite> on the latest master, then merge the pull request</li>
-</ol>
-<div class="figure" id="id2">
-<img alt="Release to production" src="../_images/gitflow-Page-2.png" />
-<p class="caption"><span class="caption-text">Deployment of master to production through a release branch and tag</span></p>
+<div class="section" id="transpile">
+<h2>Transpile<a class="headerlink" href="#transpile" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://v8.dev/">V8</a> is a widely used JavaScript engine but an assumption
+every end-user consumes Kids First products on this particular version should
+not be made.
+This guide assumes <a class="reference external" href="https://babeljs.io/">Babel</a> is used for transpiling
+source code, and requires
+<a class="reference external" href="https://github.com/babel/babel/tree/master/packages/babel-preset-env">&#64;babel/preset-env</a>
+or the equivalent toward that end.</p>
 </div>
-<ol class="arabic simple" start="6">
-<li>The new <cite>HEAD</cite> of <cite>master</cite> will trigger a new deployment to the <cite>QA</cite>
-environment</li>
-<li>The new <cite>HEAD</cite> is to be deployed to the <cite>production</cite> environment, the
-<a class="reference internal" href="../development/software_releases.html#software-releases"><span class="std std-ref">Software Releases</span></a> process of creating
-a version bump branch is followed</li>
-<li>The version branch is merged back to <cite>master</cite> and the <cite>HEAD</cite> tagged with a
-release version and triggers a deployment to <cite>production</cite></li>
-</ol>
+<div class="section" id="code-standards">
+<h2>Code Standards<a class="headerlink" href="#code-standards" title="Permalink to this headline">¶</a></h2>
+<p>ECMAScript 5 is becoming deprecated and ECMAScript 6+ (ES 2015+) should be
+used.
+Use <a class="reference external" href="https://github.com/airbnb/javascript">Airbnb JavaScript Style Guide</a>
+for styling and code.
+Most repositories will check for conformance using a
+<a class="reference external" href="https://www.npmjs.com/package/eslint-config-airbnb">linter</a> as part of the CI checks.</p>
+</div>
+<div class="section" id="package-management">
+<h2>Package Management<a class="headerlink" href="#package-management" title="Permalink to this headline">¶</a></h2>
+<p>Kids First uses <code class="docutils literal notranslate"><span class="pre">yarn</span></code> for reliable and secure dependency management of its
+JavaScript projects.
+All projects should include a <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file for easy installation.
+<code class="docutils literal notranslate"><span class="pre">yarn.lock</span></code> also needs to be included to facilitate greater
+visibility of tree changes through readable source control differences.</p>
+</div>
+<div class="section" id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<p>Kids First requires unit testing to validate that each component of software
+performs as designed.
+Any unit testing framworks such as
+<a class="reference external" href="https://www.npmjs.com/package/mocha">mocha</a> or the equivalent should run
+tests stored in an appropriate directory.</p>
+</div>
+<div class="section" id="prettier">
+<h2>Prettier<a class="headerlink" href="#prettier" title="Permalink to this headline">¶</a></h2>
+<p>Prettier should be used to provide consistent formatting across the project.
+The following is the settings used for prettier that should be stored in
+<cite>prettier.config.js</cite> in the root of the project directory:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">printWidth</span><span class="o">:</span> <span class="mi">80</span><span class="p">,</span>
+  <span class="nx">singleQuote</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">trailingComma</span><span class="o">:</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span>
+  <span class="nx">bracketSpacing</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -239,10 +258,8 @@ release version and triggers a deployment to <cite>production</cite></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="commit_messages.html" class="btn btn-neutral float-right" title="Commit Messages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="../architecture/services/gen3.html" class="btn btn-neutral float-left" title="Gen3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="python.html" class="btn btn-neutral float-left" title="Guidelines for Python Projects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

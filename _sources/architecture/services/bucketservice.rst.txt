@@ -56,7 +56,7 @@ Replication
 Cross region replication is enabled for the bucket so that a redundant backup
 is available in case of some region-wide failure of S3. The data recovery
 bucket, suffixed with `-dr`, uses `Glacier <https://aws.amazon.com/glacier/>`_
-tier storage to reduce costs of the redundency.
+tier storage to reduce costs of the redundancy.
 
 Versioning
 ++++++++++

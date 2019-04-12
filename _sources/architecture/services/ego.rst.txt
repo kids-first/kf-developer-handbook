@@ -18,11 +18,11 @@ Use Within Applications
 Front facing applications such as the portal or release coordinator UI interact
 with Ego to obtain a token that may be used to authenticate with other
 services. In the above example, the portal has a short exchange with Ego
-wherein an Ego token is aquired. From there, the portal will store the token
+wherein an Ego token is acquired. From there, the portal will store the token
 then use it to verify the current user has been authenticated when talking with
 other services.
 
-Services that recieve these requests containing the user's token will verify
+Services that receive these requests containing the user's token will verify
 that the token was indeed minted by Ego by either passing the token back to Ego
 for verification, or verifying that it has been signed by Ego by using Ego's
 public key.

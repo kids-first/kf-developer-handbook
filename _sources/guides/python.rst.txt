@@ -20,7 +20,7 @@ part of the CI checks.
 Package Management
 ------------------
 
-Kids First uses `virtual enviroment` in conjunction with `pip`. All projects
+Kids First uses `virtual environment` in conjunction with `pip`. All projects
 should include at least a `requirements.txt` file for easy installation with
 `pip`. Optional requirements may be stored in another prefixed file such as
 `dev-requirements.txt` or `test-requirements.txt`.
