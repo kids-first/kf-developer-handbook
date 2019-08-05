@@ -55,3 +55,4 @@ Developer Handbook
     Airflow <https://kids-first.github.io/kf-airflow-dags>
     Ingestion Library <https://kids-first.github.io/kf-lib-data-ingest>
     Study Creator API <https://kids-first.github.io/kf-api-study-creator>
+    Release Coordinator API <https://kids-first.github.io/kf-api-release-coordinator>
