@@ -30,6 +30,7 @@ Developer Handbook
    :caption: Data
 
    data/*
+   data/genomics/*
 
 .. toctree::
    :glob:
