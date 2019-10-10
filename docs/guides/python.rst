@@ -13,9 +13,14 @@ be used for Kids First projects.
 Code Standards
 --------------
 
-Use `pep-8 <https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces>`_ for
-styling code. Most repositories will check for conformance using a linter as
-part of the CI checks.
+`Pep-8 <https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces>`_ should be
+followed for code formatting at a minimum.
+The `black <https://github.com/psf/black>`_ formatter should be used for any
+new repositories and its use is suggested for formatting any new changes or
+additions to repositories that do not yet have project-wide conformance with
+black.
+Most repositories will and should check for formatting using
+`pycodestyle <https://pypi.org/project/pycodestyle/>`_ as part of the CI checks.
 
 Package Management
 ------------------
