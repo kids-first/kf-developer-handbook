@@ -200,9 +200,14 @@ be used for Kids First projects.</p>
 </div>
 <div class="section" id="code-standards">
 <h2>Code Standards<a class="headerlink" href="#code-standards" title="Permalink to this headline">¶</a></h2>
-<p>Use <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces">pep-8</a> for
-styling code. Most repositories will check for conformance using a linter as
-part of the CI checks.</p>
+<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces">Pep-8</a> should be
+followed for code formatting at a minimum.
+The <a class="reference external" href="https://github.com/psf/black">black</a> formatter should be used for any
+new repositories and its use is suggested for formatting any new changes or
+additions to repositories that do not yet have project-wide conformance with
+black.
+Most repositories will and should check for formatting using
+<a class="reference external" href="https://pypi.org/project/pycodestyle/">pycodestyle</a> as part of the CI checks.</p>
 </div>
 <div class="section" id="package-management">
 <h2>Package Management<a class="headerlink" href="#package-management" title="Permalink to this headline">¶</a></h2>
