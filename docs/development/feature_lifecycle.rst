@@ -35,7 +35,7 @@ Committing Changes
 Code changes are added through commits to a new feature branch forked from
 `master`.
 
-Read more in :ref:`guides/commit_messages:Commit Messages` Guide
+Read more in :ref:`Commits <guides/commit_messages:Commits>` Guide
 
 Creating a Pull Request
 =======================
