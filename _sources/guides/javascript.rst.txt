@@ -50,6 +50,10 @@ Any unit testing framworks such as
 `mocha <https://www.npmjs.com/package/mocha>`_ or the equivalent should run
 tests stored in an appropriate directory.
 
+
+Test coverage can be integrated into each GitHub repos with `Codecov.io <https://docs.codecov.io/docs/node>`_
+by installing `codecov <https://github.com/codecov/example-node>`_.
+
 Prettier
 --------
 

@@ -170,3 +170,10 @@ health of the deployment can be enabled. Netlifiy can also be configured to
 post review comments with links to the deployed branches.
 
 
+Codecov
+-------
+
+Code coverage tools incentivize developers to write tests and increase
+coverage.  Codecov can provide code coverage (difference) at commits, pull
+requests or branches level. Codecov can be integrated into CircleCI testing,
+and the reports are automatically attached to each pull request as bot comment.
