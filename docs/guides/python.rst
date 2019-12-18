@@ -34,6 +34,9 @@ Testing
 -------
 
 Kids First uses `pytest <https://docs.pytest.org/en/latest/>`_ exclusively for
-running tests.
+running tests. Test should be stored in the `tests` directory at the top level
+of the project.
 
-Test should be stored in the `tests` directory at the top level of the project.
+Test coverage can be integrated into each GitHub repos with `Codecov.io <https://docs.codecov.io/docs/python>`_
+by installing `pytest-cov <https://pypi.org/project/pytest-cov/>`_  and
+`codecov <https://github.com/codecov/example-python/>`_ for Python projects.
