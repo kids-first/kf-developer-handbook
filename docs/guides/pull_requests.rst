@@ -50,6 +50,12 @@ information on this feature.
    Sidebar of a Pull Request in GitHub displaying completed Reviewers,
    Assignees, and Labels fields
 
+GitHub pull-request templates can auto-populate the description field and
+provide a skeleton framework for developers to fill out. Templates help provide
+a baseline standard of informational quality and organizational rigor.
+
+`About pull request templates <https://help.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository>`_
+
 Reviewers
 ---------
 
@@ -57,6 +63,13 @@ Reviewers should be requested for feedback on a pull request. According to the
 :ref:`development/repositories:The Anatomy of a Repository`, there should be a
 status check in place for all repositories that requires at least one reviewer
 to give an approval to the pull request.
+
+Reviews are required from at least one other developer for pull requests
+against `master`. If a feature introduced by a pull request potentially impacts
+other applications or developers, those stakeholders should also be requested
+for review and provide their consent via an approval.
+
+`About pull request reviews <https://help.github.com/articles/about-pull-request-reviews/>`_
 
 Assignees
 ---------
@@ -70,10 +83,5 @@ Labels
 Labels are useful for categorizing a pull request or issues. It is helpful for
 distilling open pull requests or summarizing changes in releases.
 
-
-Reviews are required from at least one other developer for pull requests
-against `master`. If a feature introduced by a pull request potentially impacts
-other applications or developers, those stakeholders should also be requested
-for review and provide their consent via an approval.
-
-`About pull request reviews <https://help.github.com/articles/about-pull-request-reviews/>`_
+Suggested labels are ``bug``, ``devops``, ``documentation``,
+``epic``, ``feature``, ``help wanted``, and ``refactor``.
