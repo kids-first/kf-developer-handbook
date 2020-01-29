@@ -114,9 +114,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#version">Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#transpile">Transpile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#code-standards">Code Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prettier">Prettier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#package-management">Package Management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#testing">Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#prettier">Prettier</a></li>
 </ul>
 </li>
 </ul>
@@ -214,10 +214,24 @@ or the equivalent toward that end.</p>
 <h2>Code Standards<a class="headerlink" href="#code-standards" title="Permalink to this headline">¶</a></h2>
 <p>ECMAScript 5 is becoming deprecated and ECMAScript 6+ (ES 2015+) should be
 used.
-Use <a class="reference external" href="https://github.com/airbnb/javascript">Airbnb JavaScript Style Guide</a>
-for styling and code.
-Most repositories will check for conformance using a
-<a class="reference external" href="https://www.npmjs.com/package/eslint-config-airbnb">linter</a> as part of the CI checks.</p>
+Use the <a class="reference external" href="https://github.com/airbnb/javascript">Airbnb JavaScript Style Guide</a>
+for general guidelines around styling and code. This will be used in
+conjunction with Prettier for direct linting. In cases of conflict between
+the Airbnb JavaScript Style Guide and Prettier, we will default to Prettier.</p>
+</div>
+<div class="section" id="prettier">
+<h2>Prettier<a class="headerlink" href="#prettier" title="Permalink to this headline">¶</a></h2>
+<p>Prettier should be used to provide consistent formatting across the project.
+The following is the settings used for prettier that should be stored in
+<cite>prettier.config.js</cite> in the root of the project directory:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">printWidth</span><span class="o">:</span> <span class="mi">80</span><span class="p">,</span>
+  <span class="nx">singleQuote</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">trailingComma</span><span class="o">:</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span>
+  <span class="nx">bracketSpacing</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="package-management">
 <h2>Package Management<a class="headerlink" href="#package-management" title="Permalink to this headline">¶</a></h2>
@@ -236,20 +250,6 @@ Any unit testing framworks such as
 tests stored in an appropriate directory.</p>
 <p>Test coverage can be integrated into each GitHub repos with <a class="reference external" href="https://docs.codecov.io/docs/node">Codecov.io</a>
 by installing <a class="reference external" href="https://github.com/codecov/example-node">codecov</a>.</p>
-</div>
-<div class="section" id="prettier">
-<h2>Prettier<a class="headerlink" href="#prettier" title="Permalink to this headline">¶</a></h2>
-<p>Prettier should be used to provide consistent formatting across the project.
-The following is the settings used for prettier that should be stored in
-<cite>prettier.config.js</cite> in the root of the project directory:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">printWidth</span><span class="o">:</span> <span class="mi">80</span><span class="p">,</span>
-  <span class="nx">singleQuote</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="nx">trailingComma</span><span class="o">:</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span>
-  <span class="nx">bracketSpacing</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-<span class="p">};</span>
-</pre></div>
-</div>
 </div>
 </div>
 
