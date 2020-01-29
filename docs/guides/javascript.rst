@@ -27,10 +27,26 @@ Code Standards
 
 ECMAScript 5 is becoming deprecated and ECMAScript 6+ (ES 2015+) should be
 used.
-Use `Airbnb JavaScript Style Guide <https://github.com/airbnb/javascript>`_
-for styling and code.
-Most repositories will check for conformance using a
-`linter <https://www.npmjs.com/package/eslint-config-airbnb>`_ as part of the CI checks.
+Use the `Airbnb JavaScript Style Guide <https://github.com/airbnb/javascript>`_
+for general guidelines around styling and code. This will be used in
+conjunction with Prettier for direct linting. In cases of conflict between
+the Airbnb JavaScript Style Guide and Prettier, we will default to Prettier.
+
+Prettier
+--------
+
+Prettier should be used to provide consistent formatting across the project.
+The following is the settings used for prettier that should be stored in
+`prettier.config.js` in the root of the project directory:
+
+.. code-block:: js
+
+    module.exports = {
+      printWidth: 80,
+      singleQuote: true,
+      trailingComma: 'all',
+      bracketSpacing: false,
+    };
 
 Package Management
 ------------------
@@ -53,19 +69,3 @@ tests stored in an appropriate directory.
 
 Test coverage can be integrated into each GitHub repos with `Codecov.io <https://docs.codecov.io/docs/node>`_
 by installing `codecov <https://github.com/codecov/example-node>`_.
-
-Prettier
---------
-
-Prettier should be used to provide consistent formatting across the project.
-The following is the settings used for prettier that should be stored in
-`prettier.config.js` in the root of the project directory:
-
-.. code-block:: js
-
-    module.exports = {
-      printWidth: 80,
-      singleQuote: true,
-      trailingComma: 'all',
-      bracketSpacing: false,
-    };
