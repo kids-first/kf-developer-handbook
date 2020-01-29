@@ -28,9 +28,9 @@ Code Standards
 ECMAScript 5 is becoming deprecated and ECMAScript 6+ (ES 2015+) should be
 used.
 Use the `Airbnb JavaScript Style Guide <https://github.com/airbnb/javascript>`_
-for general guidelines around styling and code. This will be used in conjunction
-with Prettier for direct linting. In cases of conflict between the Airbnb JavaScript
-Style Guide and Prettier, we will default to Prettier.
+for general guidelines around styling and code. This will be used in
+conjunction with Prettier for direct linting. In cases of conflict between
+the Airbnb JavaScript Style Guide and Prettier, we will default to Prettier.
 
 Prettier
 --------
